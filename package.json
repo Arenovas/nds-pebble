@@ -1,0 +1,32 @@
+{
+  "name": "My Simple Analog",
+  "author": "Pebble Technology",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "pebble-app"
+  ],
+  "dependencies": {},
+  "pebble": {
+    "sdkVersion": "3",
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk"
+    ],
+    "enableMultiJS": false,
+    "capabilities": [],
+    "projectType": "native",
+    "displayName": "My Simple Analog",
+    "uuid": "ecc8f112-318f-4ee2-be11-53c63b8a1139",
+    "watchapp": {
+      "watchface": true,
+      "hiddenApp": false,
+      "onlyShownOnCommunication": false
+    },
+    "resources": {
+      "media": []
+    },
+    "messageKeys": {}
+  }
+}
