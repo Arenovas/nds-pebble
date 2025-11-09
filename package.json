@@ -1,6 +1,6 @@
 {
-  "name": "My Simple Analog",
-  "author": "Pebble Technology",
+  "name": "NDS Clock",
+  "author": "Arenovas",
   "version": "1.0.0",
   "private": true,
   "keywords": [
@@ -12,12 +12,14 @@
     "targetPlatforms": [
       "aplite",
       "basalt",
-      "chalk"
+      "chalk",
+      "diorite",
+      "flint"
     ],
     "enableMultiJS": false,
     "capabilities": [],
     "projectType": "native",
-    "displayName": "My Simple Analog",
+    "displayName": "NDS Clock",
     "uuid": "ecc8f112-318f-4ee2-be11-53c63b8a1139",
     "watchapp": {
       "watchface": true,
@@ -25,7 +27,24 @@
       "onlyShownOnCommunication": false
     },
     "resources": {
-      "media": []
+      "media": [
+      {
+          "menuIcon": true,
+          "type": "png",
+          "name": "IMAGE_MENU_ICON",
+          "file": "images/icon.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_BACKGROUND",
+          "file": "images/bg.png"
+        },
+        {
+          "type": "font",
+          "name": "NINTENDO_DS_BIOS_13",
+          "file": "fonts/Nintendo-DS-BIOS.ttf"
+        }
+      ]
     },
     "messageKeys": {}
   }
