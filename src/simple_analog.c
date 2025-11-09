@@ -9,6 +9,10 @@ static TextLayer *s_day_label, *s_num_label;
 static GPath *s_tick_paths[NUM_CLOCK_TICKS];
 static GPath *s_minute_arrow, *s_hour_arrow;
 static char s_num_buffer[4], s_day_buffer[6];
+// Declare globally
+static GFont s_time_font;
+static BitmapLayer *s_background_layer;
+static GBitmap *s_background_bitmap;
 
 static void bg_update_proc(Layer *layer, GContext *ctx) {
   graphics_context_set_fill_color(ctx, GColorBlack);
@@ -76,9 +80,25 @@ static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
-  s_simple_bg_layer = layer_create(bounds);
-  layer_set_update_proc(s_simple_bg_layer, bg_update_proc);
-  layer_add_child(window_layer, s_simple_bg_layer);
+  // Create GFont
+  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_13));
+
+  // Apply custom font to TextLayer
+  //text_layer_set_font(s_time_layer, s_time_font);
+
+  // Create GBitmap
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BACKGROUND);
+
+  // Create BitmapLayer to display the GBitmap
+  s_background_layer = bitmap_layer_create(bounds);
+
+  // Set the bitmap onto the layer and add to the window
+  bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
+  layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
+
+  //s_simple_bg_layer = layer_create(bounds);
+  //layer_set_update_proc(s_simple_bg_layer, bg_update_proc);
+  //layer_add_child(window_layer, s_simple_bg_layer);
 
   s_date_layer = layer_create(bounds);
   layer_set_update_proc(s_date_layer, date_update_proc);
@@ -112,6 +132,15 @@ static void window_load(Window *window) {
 static void window_unload(Window *window) {
   layer_destroy(s_simple_bg_layer);
   layer_destroy(s_date_layer);
+
+  // Destroy BitmapLayer
+  bitmap_layer_destroy(s_background_layer);
+
+  // Destroy GBitmap
+  gbitmap_destroy(s_background_bitmap);
+
+  // Unload GFont
+  fonts_unload_custom_font(s_time_font);
 
   text_layer_destroy(s_day_label);
   text_layer_destroy(s_num_label);
