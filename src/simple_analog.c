@@ -13,6 +13,14 @@ static char s_num_buffer[6], s_day_buffer[6];
 static GFont s_time_font;
 static BitmapLayer *s_background_layer;
 static GBitmap *s_background_bitmap;
+static BitmapLayer *s_batt_layer;
+static GBitmap *s_batt_bitmap;
+static int s_battery_level;
+static Layer *s_battery_layer;
+static BitmapLayer *s_background_layer, *s_bt_icon_layer;
+static GBitmap *s_background_bitmap, *s_bt_icon_bitmap;
+//static BitmapLayer *s_background_layer, *s_bt_icon_layer_on;
+static GBitmap *s_background_bitmap, *s_bt_icon_bitmap_on;
 
 static void bg_update_proc(Layer *layer, GContext *ctx) {
   graphics_context_set_fill_color(ctx, GColorBlack);
@@ -96,6 +104,57 @@ static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed) {
   layer_mark_dirty(window_get_root_layer(s_window));
 }
 
+static void battery_callback(BatteryChargeState state) {
+  // Record the new battery level
+  s_battery_level = state.charge_percent;
+  // Update meter
+  layer_mark_dirty(s_battery_layer);
+}
+
+static void battery_update_proc(Layer *layer, GContext *ctx) {
+
+  GRect bounds = layer_get_bounds(layer);
+
+  // Find the width of the bar (total width = 114px)
+  int width = (s_battery_level * 10) / 100;
+
+  // Draw the background
+  //graphics_context_set_fill_color(ctx, GColorWhite);
+  //graphics_fill_rect(ctx, bounds, 0, GCornerTopRight);
+
+  // Draw the bar
+  graphics_context_set_fill_color(ctx, GColorBlack);
+  graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
+
+  // Create GBitmap
+  s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
+
+  // Create BitmapLayer to display the GBitmap
+  s_batt_layer = bitmap_layer_create(bounds);
+
+  bitmap_layer_set_compositing_mode(s_batt_layer, GCompOpSet);
+  bitmap_layer_set_bitmap(s_batt_layer, s_batt_bitmap);
+  layer_add_child(layer, bitmap_layer_get_layer(s_batt_layer));
+}
+
+static void bluetooth_callback(bool connected) {
+  // Show icon if disconnected
+  if(connected)
+  {
+    //layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer), true);
+    //layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer_on), false);
+    bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
+    bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap_on);
+  }
+  else
+  {
+    //layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer), false);
+    //layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer_on), true);
+    bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
+    bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
+  }
+}
+
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
@@ -125,8 +184,8 @@ static void window_load(Window *window) {
   layer_add_child(window_layer, s_date_layer);
 
   s_day_label = text_layer_create(PBL_IF_ROUND_ELSE(
-    GRect(52, -3, 27, 15),
-    GRect(52, -3, 27, 15)));
+    GRect(50, -3, 29, 15),
+    GRect(50, -3, 29, 15)));
   text_layer_set_text(s_day_label, s_day_buffer);
   text_layer_set_background_color(s_day_label, GColorWhite);
   text_layer_set_text_color(s_day_label, GColorBlack);
@@ -147,10 +206,30 @@ static void window_load(Window *window) {
   s_hands_layer = layer_create(bounds);
   layer_set_update_proc(s_hands_layer, hands_update_proc);
   layer_add_child(window_layer, s_hands_layer);
+
+  // Create battery meter Layer
+  s_battery_layer = layer_create(GRect(130, 4, 12, 7));
+  layer_set_update_proc(s_battery_layer, battery_update_proc);
+
+  // Add to Window
+  layer_add_child(window_get_root_layer(window), s_battery_layer);
+
+  // Create the Bluetooth icon GBitmap
+  s_bt_icon_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_OFF);
+  s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_ON);
+
+  // Create the BitmapLayer to display the GBitmap
+  s_bt_icon_layer = bitmap_layer_create(GRect(114, 4, 11, 8));
+  bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
+  bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
+  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer));
+  //s_bt_icon_layer_on = bitmap_layer_create(GRect(114, 4, 11, 8));
+  //bitmap_layer_set_bitmap(s_bt_icon_layer_on, s_bt_icon_bitmap_on);
+  //layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer_on));
 }
 
 static void window_unload(Window *window) {
-  layer_destroy(s_simple_bg_layer);
+  //layer_destroy(s_simple_bg_layer);
   layer_destroy(s_date_layer);
 
   // Destroy BitmapLayer
@@ -159,6 +238,12 @@ static void window_unload(Window *window) {
   // Destroy GBitmap
   gbitmap_destroy(s_background_bitmap);
 
+  // Destroy BitmapLayer
+  bitmap_layer_destroy(s_batt_layer);
+
+  // Destroy GBitmap
+  gbitmap_destroy(s_batt_bitmap);
+
   // Unload GFont
   fonts_unload_custom_font(s_time_font);
 
@@ -166,6 +251,12 @@ static void window_unload(Window *window) {
   text_layer_destroy(s_num_label);
 
   layer_destroy(s_hands_layer);
+  layer_destroy(s_battery_layer);
+
+  gbitmap_destroy(s_bt_icon_bitmap);
+  bitmap_layer_destroy(s_bt_icon_layer);
+  gbitmap_destroy(s_bt_icon_bitmap_on);
+  //bitmap_layer_destroy(s_bt_icon_layer_on);
 }
 
 static void init() {
@@ -194,6 +285,16 @@ static void init() {
   }
 
   tick_timer_service_subscribe(SECOND_UNIT, handle_second_tick);
+  // Ensure battery level is displayed from the start
+  battery_callback(battery_state_service_peek());
+
+  // Register for Bluetooth connection updates
+  connection_service_subscribe((ConnectionHandlers) {
+  .pebble_app_connection_handler = bluetooth_callback
+  });
+
+  // Show the correct state of the BT connection from the start
+  bluetooth_callback(connection_service_peek_pebble_app_connection());
 }
 
 static void deinit() {
