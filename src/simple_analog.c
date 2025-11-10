@@ -8,7 +8,7 @@ static TextLayer *s_day_label, *s_num_label;
 
 static GPath *s_tick_paths[NUM_CLOCK_TICKS];
 static GPath *s_minute_arrow, *s_hour_arrow;
-static char s_num_buffer[4], s_day_buffer[6];
+static char s_num_buffer[6], s_day_buffer[6];
 // Declare globally
 static GFont s_time_font;
 static BitmapLayer *s_background_layer;
@@ -29,46 +29,66 @@ static void bg_update_proc(Layer *layer, GContext *ctx) {
 static void hands_update_proc(Layer *layer, GContext *ctx) {
   GRect bounds = layer_get_bounds(layer);
   GPoint center = grect_center_point(&bounds);
+  center.y = center.y - 5;
 
-  const int16_t second_hand_length = PBL_IF_ROUND_ELSE((bounds.size.w / 2) - 19, bounds.size.w / 2);
+  const int16_t second_hand_length = PBL_IF_ROUND_ELSE((bounds.size.w / 2) - 19, (bounds.size.w / 2) - 34);
+  const int16_t minute_hand_length = PBL_IF_ROUND_ELSE((bounds.size.w / 2) - 19, (bounds.size.w / 2) - 40);
+  const int16_t hour_hand_length = PBL_IF_ROUND_ELSE((bounds.size.w / 2) - 19, (bounds.size.w / 2) - 46);
 
   time_t now = time(NULL);
   struct tm *t = localtime(&now);
   int32_t second_angle = TRIG_MAX_ANGLE * t->tm_sec / 60;
   GPoint second_hand = {
     .x = (int16_t)(sin_lookup(second_angle) * (int32_t)second_hand_length / TRIG_MAX_RATIO) + center.x,
-    .y = (int16_t)(-cos_lookup(second_angle) * (int32_t)second_hand_length / TRIG_MAX_RATIO) + center.y,
+    .y = (int16_t)(-cos_lookup(second_angle) * (int32_t)second_hand_length / TRIG_MAX_RATIO) + (center.y),
+  };
+
+  int32_t minute_angle = TRIG_MAX_ANGLE * t->tm_min / 60;
+  GPoint minute_hand = {
+    .x = (int16_t)(sin_lookup(minute_angle) * (int32_t)minute_hand_length / TRIG_MAX_RATIO) + center.x,
+    .y = (int16_t)(-cos_lookup(minute_angle) * (int32_t)minute_hand_length / TRIG_MAX_RATIO) + (center.y),
+  };
+
+  int32_t hour_angle = (TRIG_MAX_ANGLE * (((t->tm_hour % 12) * 6) + (t->tm_min / 10))) / (12 * 6);
+  GPoint hour_hand = {
+    .x = (int16_t)(sin_lookup(hour_angle) * (int32_t)hour_hand_length / TRIG_MAX_RATIO) + center.x,
+    .y = (int16_t)(-cos_lookup(hour_angle) * (int32_t)hour_hand_length / TRIG_MAX_RATIO) + (center.y),
   };
 
   // second hand
-  graphics_context_set_stroke_color(ctx, GColorWhite);
+  graphics_context_set_stroke_width(ctx, 2);
+  graphics_context_set_stroke_color(ctx, GColorDarkGray);
   graphics_draw_line(ctx, second_hand, center);
 
   // minute/hour hand
-  graphics_context_set_fill_color(ctx, GColorWhite);
+  //graphics_context_set_fill_color(ctx, GColorBlack);
   graphics_context_set_stroke_color(ctx, GColorBlack);
+  graphics_draw_line(ctx, minute_hand, center);
 
-  gpath_rotate_to(s_minute_arrow, TRIG_MAX_ANGLE * t->tm_min / 60);
-  gpath_draw_filled(ctx, s_minute_arrow);
-  gpath_draw_outline(ctx, s_minute_arrow);
+  graphics_context_set_stroke_color(ctx, GColorBlack);
+  graphics_draw_line(ctx, hour_hand, center);
 
-  gpath_rotate_to(s_hour_arrow, (TRIG_MAX_ANGLE * (((t->tm_hour % 12) * 6) + (t->tm_min / 10))) / (12 * 6));
-  gpath_draw_filled(ctx, s_hour_arrow);
-  gpath_draw_outline(ctx, s_hour_arrow);
+  //gpath_rotate_to(s_minute_arrow, TRIG_MAX_ANGLE * t->tm_min / 60);
+  //gpath_draw_filled(ctx, s_minute_arrow);
+  //gpath_draw_outline(ctx, s_minute_arrow);
+
+  //gpath_rotate_to(s_hour_arrow, (TRIG_MAX_ANGLE * (((t->tm_hour % 12) * 6) + (t->tm_min / 10))) / (12 * 6));
+  //gpath_draw_filled(ctx, s_hour_arrow);
+  //gpath_draw_outline(ctx, s_hour_arrow);
 
   // dot in the middle
-  graphics_context_set_fill_color(ctx, GColorBlack);
-  graphics_fill_rect(ctx, GRect(bounds.size.w / 2 - 1, bounds.size.h / 2 - 1, 3, 3), 0, GCornerNone);
+  //graphics_context_set_fill_color(ctx, GColorBlack);
+  //graphics_fill_rect(ctx, GRect(bounds.size.w / 2 - 1, bounds.size.h / 2 - 1, 3, 3), 0, GCornerNone);
 }
 
 static void date_update_proc(Layer *layer, GContext *ctx) {
   time_t now = time(NULL);
   struct tm *t = localtime(&now);
 
-  strftime(s_day_buffer, sizeof(s_day_buffer), "%a", t);
+  strftime(s_day_buffer, sizeof(s_day_buffer), "%R", t);
   text_layer_set_text(s_day_label, s_day_buffer);
 
-  strftime(s_num_buffer, sizeof(s_num_buffer), "%d", t);
+  strftime(s_num_buffer, sizeof(s_num_buffer), "%D", t);
   text_layer_set_text(s_num_label, s_num_buffer);
 }
 
@@ -81,7 +101,7 @@ static void window_load(Window *window) {
   GRect bounds = layer_get_bounds(window_layer);
 
   // Create GFont
-  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_13));
+  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
 
   // Apply custom font to TextLayer
   //text_layer_set_font(s_time_layer, s_time_font);
@@ -105,22 +125,22 @@ static void window_load(Window *window) {
   layer_add_child(window_layer, s_date_layer);
 
   s_day_label = text_layer_create(PBL_IF_ROUND_ELSE(
-    GRect(63, 114, 27, 20),
-    GRect(46, 114, 27, 20)));
+    GRect(52, -3, 27, 15),
+    GRect(52, -3, 27, 15)));
   text_layer_set_text(s_day_label, s_day_buffer);
-  text_layer_set_background_color(s_day_label, GColorBlack);
-  text_layer_set_text_color(s_day_label, GColorWhite);
-  text_layer_set_font(s_day_label, fonts_get_system_font(FONT_KEY_GOTHIC_18));
+  text_layer_set_background_color(s_day_label, GColorWhite);
+  text_layer_set_text_color(s_day_label, GColorBlack);
+  text_layer_set_font(s_day_label, s_time_font);
 
   layer_add_child(s_date_layer, text_layer_get_layer(s_day_label));
 
   s_num_label = text_layer_create(PBL_IF_ROUND_ELSE(
-    GRect(90, 114, 18, 20),
-    GRect(73, 114, 18, 20)));
+    GRect(83, -3, 27, 15),
+    GRect(83, -3, 27, 15)));
   text_layer_set_text(s_num_label, s_num_buffer);
-  text_layer_set_background_color(s_num_label, GColorBlack);
-  text_layer_set_text_color(s_num_label, GColorWhite);
-  text_layer_set_font(s_num_label, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+  text_layer_set_background_color(s_num_label, GColorWhite);
+  text_layer_set_text_color(s_num_label, GColorBlack);
+  text_layer_set_font(s_num_label, s_time_font);
 
   layer_add_child(s_date_layer, text_layer_get_layer(s_num_label));
 
