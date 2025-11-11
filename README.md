@@ -1,5 +1,7 @@
-# simple-analog
+# nds-pebble
 
-![screenshot](simple-analog-screenshot.png)
+![screenshot](dioriteflint.png)
 
-Example analog watchface that uses hands instead of numbers.
+A recreation of the NDS BIOS clock.
+
+Uses the Simple Analog example as a base https://github.com/pebble-examples/simple-analog 
