@@ -19,7 +19,6 @@ static int s_battery_level;
 static Layer *s_battery_layer;
 static BitmapLayer *s_background_layer, *s_bt_icon_layer;
 static GBitmap *s_background_bitmap, *s_bt_icon_bitmap;
-//static BitmapLayer *s_background_layer, *s_bt_icon_layer_on;
 static GBitmap *s_background_bitmap, *s_bt_icon_bitmap_on;
 
 static void bg_update_proc(Layer *layer, GContext *ctx) 
@@ -122,12 +121,8 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 
 	GRect bounds = layer_get_bounds(layer);
 
-	// Find the width of the bar (total width = 114px)
+	// Find the width of the bar
 	int width = (s_battery_level * 10) / 100;
-
-	// Draw the background
-	//graphics_context_set_fill_color(ctx, GColorWhite);
-	//graphics_fill_rect(ctx, bounds, 0, GCornerTopRight);
 
 	// Draw the bar
 	graphics_context_set_fill_color(ctx, GColorBlack);
@@ -149,15 +144,11 @@ static void bluetooth_callback(bool connected)
 	// Show icon if disconnected
 	if(connected)
 	{
-		//layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer), true);
-		//layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer_on), false);
 		bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
 		bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap_on);
 	}
 	else
 	{
-		//layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer), false);
-		//layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_layer_on), true);
 		bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
 		bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
 	}
@@ -171,8 +162,6 @@ static void window_load(Window *window)
 	// Create GFont
 	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
 
-	// Apply custom font to TextLayer
-	//text_layer_set_font(s_time_layer, s_time_font);
 
 	// Create GBitmap
 	s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BACKGROUND);
@@ -184,9 +173,6 @@ static void window_load(Window *window)
 	bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
 	layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
 
-	//s_simple_bg_layer = layer_create(bounds);
-	//layer_set_update_proc(s_simple_bg_layer, bg_update_proc);
-	//layer_add_child(window_layer, s_simple_bg_layer);
 
 	s_date_layer = layer_create(bounds);
 	layer_set_update_proc(s_date_layer, date_update_proc);
@@ -232,14 +218,10 @@ static void window_load(Window *window)
 	bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer));
-	//s_bt_icon_layer_on = bitmap_layer_create(GRect(114, 4, 11, 8));
-	//bitmap_layer_set_bitmap(s_bt_icon_layer_on, s_bt_icon_bitmap_on);
-	//layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer_on));
 }
 
 static void window_unload(Window *window) 
 {
-	//layer_destroy(s_simple_bg_layer);
 	layer_destroy(s_date_layer);
 
 	// Destroy BitmapLayer
@@ -266,7 +248,6 @@ static void window_unload(Window *window)
 	gbitmap_destroy(s_bt_icon_bitmap);
 	bitmap_layer_destroy(s_bt_icon_layer);
 	gbitmap_destroy(s_bt_icon_bitmap_on);
-	//bitmap_layer_destroy(s_bt_icon_layer_on);
 }
 
 static void init() 
