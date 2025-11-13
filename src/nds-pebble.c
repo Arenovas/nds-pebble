@@ -1,4 +1,4 @@
-#include "simple_analog.h"
+#include "nds-pebble.h"
 
 #include "pebble.h"
 
