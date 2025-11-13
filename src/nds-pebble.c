@@ -3,11 +3,12 @@
 #include "pebble.h"
 
 static Window *s_window;
-static Layer *s_simple_bg_layer, *s_date_layer, *s_hands_layer;
+//static Layer *s_simple_bg_layer, *s_date_layer, *s_hands_layer;
+static Layer *s_date_layer, *s_hands_layer;
 static TextLayer *s_day_label, *s_num_label;
 
 //static GPath *s_tick_paths[NUM_CLOCK_TICKS];
-static GPath *s_minute_arrow, *s_hour_arrow;
+//static GPath *s_minute_arrow, *s_hour_arrow;
 static char s_num_buffer[6], s_day_buffer[6];
 // Declare globally
 static GFont s_time_font;
@@ -21,19 +22,19 @@ static BitmapLayer *s_background_layer, *s_bt_icon_layer;
 static GBitmap *s_background_bitmap, *s_bt_icon_bitmap;
 static GBitmap *s_background_bitmap, *s_bt_icon_bitmap_on;
 
-static void bg_update_proc(Layer *layer, GContext *ctx)
+/*static void bg_update_proc(Layer *layer, GContext *ctx)
 {
 	graphics_context_set_fill_color(ctx, GColorBlack);
 	graphics_fill_rect(ctx, layer_get_bounds(layer), 0, GCornerNone);
 	graphics_context_set_fill_color(ctx, GColorWhite);
-	/*for (int i = 0; i < NUM_CLOCK_TICKS; ++i) 
+	for (int i = 0; i < NUM_CLOCK_TICKS; ++i) 
 	{
 		const int x_offset = 0;
 		const int y_offset = 0;
 		gpath_move_to(s_tick_paths[i], GPoint(x_offset, y_offset));
 		gpath_draw_filled(ctx, s_tick_paths[i]);
-	}*/
-}
+	}
+}*/
 
 static void hands_update_proc(Layer *layer, GContext *ctx)
 {
@@ -268,7 +269,7 @@ static void init()
 
 	Layer *window_layer = window_get_root_layer(s_window);
 	GRect bounds = layer_get_bounds(window_layer);
-	GPoint center = grect_center_point(&bounds);
+	//GPoint center = grect_center_point(&bounds);
 	//gpath_move_to(s_minute_arrow, center);
 	//gpath_move_to(s_hour_arrow, center);
 
