@@ -5,7 +5,7 @@
 static Window *s_window;
 //static Layer *s_simple_bg_layer, *s_date_layer, *s_hands_layer;
 static Layer *s_date_layer, *s_hands_layer;
-static TextLayer *s_day_label, *s_num_label;
+static TextLayer *s_time_label, *s_date_label;
 
 //static GPath *s_tick_paths[NUM_CLOCK_TICKS];
 //static GPath *s_minute_arrow, *s_hour_arrow;
@@ -102,10 +102,10 @@ static void date_update_proc(Layer *layer, GContext *ctx)
 	struct tm *t = localtime(&now);
 
 	strftime(s_day_buffer, sizeof(s_day_buffer), "%R", t);
-	text_layer_set_text(s_day_label, s_day_buffer);
+	text_layer_set_text(s_time_label, s_day_buffer);
 
 	strftime(s_num_buffer, sizeof(s_num_buffer), "%D", t);
-	text_layer_set_text(s_num_label, s_num_buffer);
+	text_layer_set_text(s_date_label, s_num_buffer);
 }
 
 static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed)
@@ -183,21 +183,21 @@ static void window_load(Window *window)
 	layer_set_update_proc(s_date_layer, date_update_proc);
 	layer_add_child(window_layer, s_date_layer);
 
-	s_day_label = text_layer_create(GRect(50, -3, 29, 15));
-	text_layer_set_text(s_day_label, s_day_buffer);
-	text_layer_set_background_color(s_day_label, GColorWhite);
-	text_layer_set_text_color(s_day_label, GColorBlack);
-	text_layer_set_font(s_day_label, s_time_font);
+	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
+	text_layer_set_text(s_time_label, s_day_buffer);
+	//text_layer_set_background_color(s_time_label, GColorWhite);
+	text_layer_set_text_color(s_time_label, GColorBlack);
+	text_layer_set_font(s_time_label, s_time_font);
 
-	layer_add_child(s_date_layer, text_layer_get_layer(s_day_label));
+	layer_add_child(s_date_layer, text_layer_get_layer(s_time_label));
 
-	s_num_label = text_layer_create(GRect(83, -3, 27, 15));
-	text_layer_set_text(s_num_label, s_num_buffer);
-	text_layer_set_background_color(s_num_label, GColorWhite);
-	text_layer_set_text_color(s_num_label, GColorBlack);
-	text_layer_set_font(s_num_label, s_time_font);
+	s_date_label = text_layer_create(GRect(83, -3, 27, 15));
+	text_layer_set_text(s_date_label, s_num_buffer);
+	//text_layer_set_background_color(s_date_label, GColorWhite);
+	text_layer_set_text_color(s_date_label, GColorBlack);
+	text_layer_set_font(s_date_label, s_time_font);
 
-	layer_add_child(s_date_layer, text_layer_get_layer(s_num_label));
+	layer_add_child(s_date_layer, text_layer_get_layer(s_date_label));
 
 	s_hands_layer = layer_create(bounds);
 	layer_set_update_proc(s_hands_layer, hands_update_proc);
@@ -240,10 +240,13 @@ static void window_unload(Window *window)
 	// Unload GFont
 	fonts_unload_custom_font(s_time_font);
 
-	text_layer_destroy(s_day_label);
-	text_layer_destroy(s_num_label);
+	// Destroy top bar text
+	text_layer_destroy(s_time_label);
+	text_layer_destroy(s_date_label);
 
+	// Destroy watch hands
 	layer_destroy(s_hands_layer);
+	// Destroy battery icon
 	layer_destroy(s_battery_layer);
 
 	gbitmap_destroy(s_bt_icon_bitmap);
@@ -267,8 +270,8 @@ static void init()
 	//s_minute_arrow = gpath_create(&MINUTE_HAND_POINTS);
 	//s_hour_arrow = gpath_create(&HOUR_HAND_POINTS);
 
-	Layer *window_layer = window_get_root_layer(s_window);
-	GRect bounds = layer_get_bounds(window_layer);
+	//Layer *window_layer = window_get_root_layer(s_window);
+	//GRect bounds = layer_get_bounds(window_layer);
 	//GPoint center = grect_center_point(&bounds);
 	//gpath_move_to(s_minute_arrow, center);
 	//gpath_move_to(s_hour_arrow, center);
