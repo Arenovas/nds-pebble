@@ -1,0 +1,4395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="144"
+   height="168"
+   viewBox="0 0 144 168"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="NDSPebble.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="3.1044304"
+     inkscape:cx="43.003058"
+     inkscape:cy="83.912334"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g463" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="HorizontalLines"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke-width:0.112508;fill-opacity:1"
+       id="rect10"
+       width="144"
+       height="1"
+       x="0"
+       y="159"
+       inkscape:label="10" />
+    <rect
+       style="fill:#000000;stroke-width:0.112508;fill-opacity:1"
+       id="rect9"
+       width="144"
+       height="1"
+       x="0"
+       y="143"
+       inkscape:label="9" />
+    <rect
+       style="fill:#000000;stroke-width:0.112508;fill-opacity:1"
+       id="rect8"
+       width="144"
+       height="1"
+       x="0"
+       y="127"
+       inkscape:label="8" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0459312"
+       id="rect28"
+       width="24"
+       height="1"
+       x="120"
+       y="111"
+       inkscape:label="7R" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0468783"
+       id="rect7"
+       width="25"
+       height="1"
+       x="0"
+       y="111"
+       inkscape:label="7L" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0459312"
+       id="rect27"
+       width="24"
+       height="1"
+       x="120"
+       y="95"
+       inkscape:label="6R" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0468783"
+       id="rect6"
+       width="25"
+       height="1"
+       x="0"
+       y="95"
+       inkscape:label="6L" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0459312"
+       id="rect26"
+       width="24"
+       height="1"
+       x="120"
+       y="79"
+       inkscape:label="5R" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0468783"
+       id="rect5"
+       width="25"
+       height="1"
+       x="0"
+       y="79"
+       inkscape:label="5L" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0459312"
+       id="rect25"
+       width="24"
+       height="1"
+       x="120"
+       y="63"
+       inkscape:label="4R" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0468783"
+       id="rect4"
+       width="25"
+       height="1"
+       x="0"
+       y="63"
+       inkscape:label="4L" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0459312"
+       id="rect24"
+       width="24"
+       height="1"
+       x="120"
+       y="47"
+       inkscape:label="3R" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.0468783"
+       id="rect3"
+       width="25"
+       height="1"
+       x="0"
+       y="47"
+       inkscape:label="3L" />
+    <rect
+       style="fill:#000000;stroke-width:0.112508;fill-opacity:1"
+       id="rect2"
+       width="144"
+       height="1"
+       x="0"
+       y="31"
+       inkscape:label="2" />
+    <rect
+       style="fill:#000000;stroke-width:0.112508;fill-opacity:1"
+       id="rect1"
+       width="144"
+       height="1"
+       x="0"
+       y="15"
+       inkscape:label="1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="ClockGrid">
+    <g
+       inkscape:groupmode="layer"
+       id="layer5"
+       inkscape:label="Horizontal">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.091383"
+         id="rect38"
+         width="95"
+         height="1"
+         x="25"
+         y="111"
+         inkscape:label="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.091383"
+         id="rect37"
+         width="95"
+         height="1"
+         x="25"
+         y="95"
+         inkscape:label="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.091383"
+         id="rect36"
+         width="95"
+         height="1"
+         x="25"
+         y="79"
+         inkscape:label="3" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.091383"
+         id="rect35"
+         width="95"
+         height="1"
+         x="25"
+         y="63"
+         inkscape:label="2" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.091383"
+         id="rect34"
+         width="95"
+         height="1"
+         x="25"
+         y="47"
+         inkscape:label="1" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer6"
+       inkscape:label="Vertical">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.40024"
+         id="rect43"
+         width="1"
+         height="95"
+         x="104"
+         y="32"
+         inkscape:label="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.40024"
+         id="rect42"
+         width="1"
+         height="95"
+         x="88"
+         y="32"
+         inkscape:label="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.40024"
+         id="rect41"
+         width="1"
+         height="95"
+         x="72"
+         y="32"
+         inkscape:label="3" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.40024"
+         id="rect40"
+         width="1"
+         height="95"
+         x="56"
+         y="32"
+         inkscape:label="2" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.40024"
+         id="rect39"
+         width="1"
+         height="95"
+         x="40"
+         y="32"
+         inkscape:label="1" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="VerticalLines">
+    <rect
+       style="fill:#000000;stroke-width:1.77699;fill-opacity:1"
+       id="rect19"
+       width="1"
+       height="153"
+       x="136"
+       y="15"
+       inkscape:label="9" />
+    <rect
+       style="fill:#000000;stroke-width:1.77699;fill-opacity:1"
+       id="rect18"
+       width="1"
+       height="153"
+       x="120"
+       y="15"
+       inkscape:label="8" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.919882"
+       id="rect33"
+       width="1"
+       height="41"
+       x="104"
+       y="127"
+       inkscape:label="7B" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.59233"
+       id="rect17"
+       width="1"
+       height="17"
+       x="104"
+       y="15"
+       inkscape:label="7T" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.919882"
+       id="rect32"
+       width="1"
+       height="41"
+       x="88"
+       y="127"
+       inkscape:label="6B" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.59233"
+       id="rect16"
+       width="1"
+       height="17"
+       x="88"
+       y="15"
+       inkscape:label="6T" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.919882"
+       id="rect31"
+       width="1"
+       height="41"
+       x="72"
+       y="127"
+       inkscape:label="5B" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.59233"
+       id="rect15"
+       width="1"
+       height="17"
+       x="72"
+       y="15"
+       inkscape:label="5T" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.919882"
+       id="rect30"
+       width="1"
+       height="41"
+       x="56"
+       y="127"
+       inkscape:label="4B" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.59233"
+       id="rect14"
+       width="1"
+       height="17"
+       x="56"
+       y="15"
+       inkscape:label="4T" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.919882"
+       id="rect29"
+       width="1"
+       height="41"
+       x="40"
+       y="127"
+       inkscape:label="3B" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.59233"
+       id="rect13"
+       width="1"
+       height="17"
+       x="40"
+       y="15"
+       inkscape:label="3T" />
+    <rect
+       style="fill:#000000;stroke-width:1.77699;fill-opacity:1"
+       id="rect12"
+       width="1"
+       height="153"
+       x="24"
+       y="15"
+       inkscape:label="2" />
+    <rect
+       style="fill:#000000;stroke-width:1.77699;fill-opacity:1"
+       id="rect11"
+       width="1"
+       height="153"
+       x="8"
+       y="15"
+       inkscape:label="1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="ClockBorder"
+     style="display:inline">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.66832"
+       id="rect20"
+       width="2"
+       height="99"
+       x="23"
+       y="30"
+       inkscape:label="Left" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.66832"
+       id="rect21"
+       width="2"
+       height="99"
+       x="120"
+       y="30"
+       inkscape:label="Right" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.66832"
+       id="rect22"
+       width="99"
+       height="2"
+       x="23"
+       y="30"
+       inkscape:label="Top" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.66832"
+       id="rect23"
+       width="99"
+       height="2"
+       x="23"
+       y="127"
+       inkscape:label="Bottom" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="TopBar">
+    <g
+       inkscape:groupmode="layer"
+       id="g63"
+       inkscape:label="Separator4">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect59"
+         width="1"
+         height="2"
+         x="127"
+         y="12"
+         inkscape:label="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect60"
+         width="1"
+         height="2"
+         x="127"
+         y="9"
+         inkscape:label="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect61"
+         width="1"
+         height="2"
+         x="127"
+         y="6"
+         inkscape:label="3" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect62"
+         width="1"
+         height="2"
+         x="127"
+         y="3"
+         inkscape:label="2" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect63"
+         width="1"
+         height="2"
+         x="127"
+         y="0"
+         inkscape:label="1" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g58"
+       inkscape:label="Separator3">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect54"
+         width="1"
+         height="2"
+         x="111"
+         y="12"
+         inkscape:label="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect55"
+         width="1"
+         height="2"
+         x="111"
+         y="9"
+         inkscape:label="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect56"
+         width="1"
+         height="2"
+         x="111"
+         y="6"
+         inkscape:label="3" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect57"
+         width="1"
+         height="2"
+         x="111"
+         y="3"
+         inkscape:label="2" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect58"
+         width="1"
+         height="2"
+         x="111"
+         y="0"
+         inkscape:label="1" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer8"
+       inkscape:label="Separator2">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect48"
+         width="1"
+         height="2"
+         x="79"
+         y="12"
+         inkscape:label="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect47"
+         width="1"
+         height="2"
+         x="79"
+         y="9"
+         inkscape:label="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect46"
+         width="1"
+         height="2"
+         x="79"
+         y="6"
+         inkscape:label="3" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect45"
+         width="1"
+         height="2"
+         x="79"
+         y="3"
+         inkscape:label="2" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect44"
+         width="1"
+         height="2"
+         x="79"
+         y="0"
+         inkscape:label="1" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g53"
+       inkscape:label="Separator1">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect49"
+         width="1"
+         height="2"
+         x="47"
+         y="12"
+         inkscape:label="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect50"
+         width="1"
+         height="2"
+         x="47"
+         y="9"
+         inkscape:label="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect51"
+         width="1"
+         height="2"
+         x="47"
+         y="6"
+         inkscape:label="3" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect52"
+         width="1"
+         height="2"
+         x="47"
+         y="3"
+         inkscape:label="2" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.761855"
+         id="rect53"
+         width="1"
+         height="2"
+         x="47"
+         y="0"
+         inkscape:label="1" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer11"
+     inkscape:label="ClockFace">
+    <g
+       inkscape:groupmode="layer"
+       id="layer12"
+       inkscape:label="12">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.16506"
+         id="rect73"
+         width="4"
+         height="20"
+         x="65"
+         y="35"
+         inkscape:label="1" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.52209"
+         id="rect74"
+         width="4"
+         height="12"
+         x="77"
+         y="35"
+         inkscape:label="2R" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.52209"
+         id="rect75"
+         width="4"
+         height="12"
+         x="70"
+         y="43"
+         inkscape:label="2L" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.45729"
+         id="rect76"
+         width="11"
+         height="4"
+         x="70"
+         y="51"
+         inkscape:label="2B" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.45729"
+         id="rect77"
+         width="11"
+         height="4"
+         x="70"
+         y="43"
+         inkscape:label="2M" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.45729"
+         id="rect78"
+         width="11"
+         height="4"
+         x="70"
+         y="35"
+         inkscape:label="2T" />
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect71"
+       width="4"
+       height="4"
+       x="49"
+       y="40"
+       inkscape:label="11" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect70"
+       width="4"
+       height="4"
+       x="33"
+       y="56"
+       inkscape:label="10" />
+    <g
+       inkscape:groupmode="layer"
+       id="g92"
+       inkscape:label="9">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.926663"
+         id="rect88"
+         width="4"
+         height="20"
+         x="36"
+         y="70"
+         inkscape:label="9R" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect89"
+         width="12"
+         height="4"
+         x="28"
+         y="70"
+         ry="0"
+         inkscape:label="9T" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect90"
+         width="12"
+         height="4"
+         x="28"
+         y="78"
+         ry="0"
+         inkscape:label="9M" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect91"
+         width="12"
+         height="4"
+         x="28"
+         y="86"
+         ry="0"
+         inkscape:label="9B" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect92"
+         width="4"
+         height="12"
+         x="28"
+         y="70"
+         ry="0"
+         inkscape:label="9L" />
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect69"
+       width="4"
+       height="4"
+       x="33"
+       y="100"
+       inkscape:label="8" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect68"
+       width="4"
+       height="4"
+       x="49"
+       y="116"
+       inkscape:label="7" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer14"
+       inkscape:label="6">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.926663"
+         id="rect83"
+         width="4"
+         height="20"
+         x="67"
+         y="104"
+         inkscape:label="6L" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect84"
+         width="12"
+         height="4"
+         x="67"
+         y="104"
+         ry="0"
+         inkscape:label="6T" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect85"
+         width="12"
+         height="4"
+         x="67"
+         y="112"
+         ry="0"
+         inkscape:label="6M" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect86"
+         width="12"
+         height="4"
+         x="67"
+         y="120"
+         ry="0"
+         inkscape:label="6B" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.4881"
+         id="rect87"
+         width="4"
+         height="12"
+         x="75"
+         y="112"
+         ry="0"
+         inkscape:label="6R" />
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect67"
+       width="4"
+       height="4"
+       x="93"
+       y="116"
+       inkscape:label="5" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect66"
+       width="4"
+       height="4"
+       x="109"
+       y="100"
+       inkscape:label="4" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer13"
+       inkscape:label="3">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.32417"
+         id="rect79"
+         width="4"
+         height="20"
+         x="113"
+         y="70"
+         inkscape:label="3R" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.32873"
+         id="rect80"
+         width="12"
+         height="4"
+         x="105"
+         y="70"
+         inkscape:label="3T" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.32873"
+         id="rect81"
+         width="12"
+         height="4"
+         x="105"
+         y="78"
+         inkscape:label="3M" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.32873"
+         id="rect82"
+         width="12"
+         height="4"
+         x="105"
+         y="86"
+         inkscape:label="3B" />
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect65"
+       width="4"
+       height="4"
+       x="109"
+       y="56"
+       inkscape:label="2" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.186"
+       id="rect64"
+       width="4"
+       height="4"
+       x="93"
+       y="40"
+       inkscape:label="1" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.00125"
+       id="rect72"
+       width="5"
+       height="5"
+       x="70"
+       y="77"
+       inkscape:label="Center" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer17"
+     inkscape:label="Battery">
+    <g
+       inkscape:groupmode="layer"
+       id="layer19"
+       inkscape:label="OuterBorder">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.836562"
+         id="rect93"
+         width="10"
+         height="1"
+         x="130"
+         y="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1"
+         id="rect94"
+         width="1"
+         height="1"
+         x="140"
+         y="5" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.73206"
+         id="rect95"
+         width="1"
+         height="3"
+         x="141"
+         y="6" />
+      <rect
+         style="fill:#000000;fill-opacity:1"
+         id="rect96"
+         width="1"
+         height="1"
+         x="140"
+         y="9" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.836562"
+         id="rect97"
+         width="10"
+         height="1"
+         x="130"
+         y="10" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:2.64576"
+         id="rect98"
+         width="1"
+         height="7"
+         x="130"
+         y="4" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer18"
+       inkscape:label="InnerBorder"
+       style="display:inline">
+      <rect
+         style="fill:#ffffff;fill-opacity:1"
+         id="rect99"
+         width="9"
+         height="1"
+         x="131"
+         y="5" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1"
+         id="rect100"
+         width="9"
+         height="1"
+         x="131"
+         y="9" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.745355"
+         id="rect101"
+         width="1"
+         height="5"
+         x="131"
+         y="5" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.57735"
+         id="rect102"
+         width="1"
+         height="3"
+         x="140"
+         y="6" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.471404"
+         id="rect103"
+         width="1"
+         height="2"
+         x="139"
+         y="5" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.471404"
+         id="rect104"
+         width="1"
+         height="2"
+         x="139"
+         y="8" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer20"
+     inkscape:label="Wireless">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:1.00722"
+       id="rect105"
+       width="2"
+       height="8"
+       x="123"
+       y="3.9995728"
+       inkscape:label="BarLarge" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.796277"
+       id="rect106"
+       width="2"
+       height="5"
+       x="120"
+       y="7"
+       inkscape:label="BarMedium" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.50361"
+       id="rect107"
+       width="2"
+       height="2"
+       x="117"
+       y="10"
+       inkscape:label="BarSmall" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer21"
+       inkscape:label="Antenna">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:0.563053"
+         id="rect108"
+         width="1"
+         height="5"
+         x="115"
+         y="7" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.18817"
+         id="rect109"
+         width="3"
+         height="1"
+         x="114"
+         y="6" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.18817"
+         id="rect110"
+         width="3"
+         height="1"
+         x="114"
+         y="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.18817"
+         id="rect111"
+         width="1"
+         height="3"
+         x="114"
+         y="4" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke-width:1.18817"
+         id="rect112"
+         width="1"
+         height="3"
+         x="116"
+         y="4" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer22"
+     inkscape:label="DetailLines">
+    <g
+       inkscape:groupmode="layer"
+       id="g463"
+       inkscape:label="10"
+       transform="translate(0,144)">
+      <g
+         inkscape:groupmode="layer"
+         id="g399"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect393"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect394"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect395"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect396"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g406"
+         inkscape:label="Square"
+         transform="translate(16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect400"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect401"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect402"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect403"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g413"
+         inkscape:label="Square"
+         transform="translate(32)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect407"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect408"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect409"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect410"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g420"
+         inkscape:label="Square"
+         transform="translate(48)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect414"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect415"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect416"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect417"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g427"
+         inkscape:label="Square"
+         transform="translate(64)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect421"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect422"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect423"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect424"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g434"
+         inkscape:label="Square"
+         transform="translate(80)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect428"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect429"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect430"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect431"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g441"
+         inkscape:label="Square"
+         transform="translate(96)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect435"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect436"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect437"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect438"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g448"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect442"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect443"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect444"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect445"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g455"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect449"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect450"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect451"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect452"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g462"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect456"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect457"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect458"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect459"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g813"
+       inkscape:label="9"
+       transform="translate(0,128)">
+      <g
+         inkscape:groupmode="layer"
+         id="g749"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect743"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect744"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect745"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect746"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect747"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect748"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect749"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g756"
+         inkscape:label="Square"
+         transform="translate(16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect750"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect751"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect752"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect753"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect754"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect755"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect756"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g763"
+         inkscape:label="Square"
+         transform="translate(32)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect757"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect758"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect759"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect760"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect761"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect762"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect763"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g770"
+         inkscape:label="Square"
+         transform="translate(48)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect764"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect765"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect766"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect767"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect768"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect769"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect770"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g777"
+         inkscape:label="Square"
+         transform="translate(64)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect771"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect772"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect773"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect774"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect775"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect776"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect777"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g784"
+         inkscape:label="Square"
+         transform="translate(80)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect778"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect779"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect780"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect781"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect782"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect783"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect784"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g791"
+         inkscape:label="Square"
+         transform="translate(96)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect785"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect786"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect787"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect788"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect789"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect790"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect791"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g798"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect792"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect793"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect794"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect795"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect796"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect797"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect798"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g805"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect799"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect800"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect801"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect802"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect803"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect804"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect805"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g812"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect806"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect807"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect808"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect809"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect810"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect811"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect812"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g743"
+       inkscape:label="8"
+       transform="translate(0,112)">
+      <g
+         inkscape:groupmode="layer"
+         id="g679"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect673"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect674"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect675"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect676"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect677"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect678"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect679"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g686"
+         inkscape:label="Square"
+         transform="translate(16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect680"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect681"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect682"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect683"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect684"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect685"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect686"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g693"
+         inkscape:label="Square"
+         transform="translate(32)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect687"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect688"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect689"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect690"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect691"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect692"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect693"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g700"
+         inkscape:label="Square"
+         transform="translate(48)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect694"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect695"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect696"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect697"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect698"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect699"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect700"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g707"
+         inkscape:label="Square"
+         transform="translate(64)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect701"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect702"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect703"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect704"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect705"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect706"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect707"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g714"
+         inkscape:label="Square"
+         transform="translate(80)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect708"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect709"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect710"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect711"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect712"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect713"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect714"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g721"
+         inkscape:label="Square"
+         transform="translate(96)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect715"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect716"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect717"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect718"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect719"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect720"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect721"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g728"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect722"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect723"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect724"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect725"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect726"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect727"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect728"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g735"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect729"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect730"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect731"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect732"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect733"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect734"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect735"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g742"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect736"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect737"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect738"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect739"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect740"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect741"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect742"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g211"
+       inkscape:label="7"
+       transform="translate(0,96)">
+      <g
+         inkscape:groupmode="layer"
+         id="g189"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect183"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect184"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect185"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect186"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect187"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect188"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect189"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g196"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect190"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect191"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect192"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect193"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect194"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect195"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect196"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g203"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect197"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect198"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect199"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect200"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect201"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect202"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect203"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g210"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect204"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect205"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect206"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect207"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect208"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect209"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect210"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g1065"
+       inkscape:label="6"
+       transform="translate(0,80)">
+      <g
+         inkscape:groupmode="layer"
+         id="g1043"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1037"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1038"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1039"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1040"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1041"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1042"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1043"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1050"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1044"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1045"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1046"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1047"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1048"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1049"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1050"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1057"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1051"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1052"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1053"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1054"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1055"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1056"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1057"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1064"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1058"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1059"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1060"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1061"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1062"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1063"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1064"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g1037"
+       inkscape:label="5"
+       transform="translate(0,64)">
+      <g
+         inkscape:groupmode="layer"
+         id="g1015"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1009"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1010"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1011"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1012"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1013"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1014"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1015"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1022"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1016"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1017"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1018"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1019"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1020"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1021"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect1022"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1029"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1023"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1024"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1025"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1026"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1027"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1028"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1029"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1036"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1030"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1031"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1032"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1033"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1034"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1035"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1036"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g1009"
+       inkscape:label="4"
+       transform="translate(0,48)">
+      <g
+         inkscape:groupmode="layer"
+         id="g987"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect981"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect982"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect983"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect984"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect985"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect986"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect987"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g994"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect988"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect989"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect990"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect991"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect992"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect993"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect994"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1001"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect995"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect996"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect997"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect998"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect999"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1000"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect1001"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g1008"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1002"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1003"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1004"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1005"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1006"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1007"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect1008"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g981"
+       inkscape:label="3"
+       transform="translate(0,32)">
+      <g
+         inkscape:groupmode="layer"
+         id="g959"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect953"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect954"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect955"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect956"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect957"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect958"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect959"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g966"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect960"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect961"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect962"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect963"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect964"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect965"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect966"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g973"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect967"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect968"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect969"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect970"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect971"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect972"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect973"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g980"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect974"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect975"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect976"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect977"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect978"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect979"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect980"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="g883"
+       inkscape:label="2"
+       transform="translate(0,16)">
+      <g
+         inkscape:groupmode="layer"
+         id="g819"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect813"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect814"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect815"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect816"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect817"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect818"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect819"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g868"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect862"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect863"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect864"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect865"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect866"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect867"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect868"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g875"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect869"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect870"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect871"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect872"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect873"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect874"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect875"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g882"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect876"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect877"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect878"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect879"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect880"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect881"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect882"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer24"
+       inkscape:label="1">
+      <g
+         inkscape:groupmode="layer"
+         id="layer23"
+         inkscape:label="Square">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect113"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect114"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect115"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect116"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect117"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect118"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect119"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g126"
+         inkscape:label="Square"
+         transform="translate(16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect120"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect121"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect122"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect123"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect124"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect125"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect126"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g133"
+         inkscape:label="Square"
+         transform="translate(32)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect127"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect128"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect129"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect130"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect131"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect132"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect133"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g140"
+         inkscape:label="Square"
+         transform="translate(48)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect134"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect135"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect136"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect137"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect138"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect139"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect140"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g147"
+         inkscape:label="Square"
+         transform="translate(64)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect141"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect142"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect143"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect144"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect145"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect146"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect147"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g154"
+         inkscape:label="Square"
+         transform="translate(80)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect148"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect149"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect150"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect151"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect152"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect153"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect154"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g161"
+         inkscape:label="Square"
+         transform="translate(96)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect155"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect156"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect157"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect158"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect159"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect160"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect161"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g168"
+         inkscape:label="Square"
+         transform="translate(112)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect162"
+           width="13"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect163"
+           width="13"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect164"
+           width="13"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect165"
+           width="13"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect166"
+           width="13"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect167"
+           width="13"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.962689"
+           id="rect168"
+           width="13"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g175"
+         inkscape:label="Square"
+         transform="translate(128)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect169"
+           width="6"
+           height="1"
+           x="10"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect170"
+           width="6"
+           height="1"
+           x="10"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect171"
+           width="6"
+           height="1"
+           x="10"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect172"
+           width="6"
+           height="1"
+           x="10"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect173"
+           width="6"
+           height="1"
+           x="10"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect174"
+           width="6"
+           height="1"
+           x="10"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.654018"
+           id="rect175"
+           width="6"
+           height="1"
+           x="10"
+           y="29" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="g182"
+         inkscape:label="Square"
+         transform="translate(-16)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect176"
+           width="7"
+           height="1"
+           x="16"
+           y="17" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect177"
+           width="7"
+           height="1"
+           x="16"
+           y="19" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect178"
+           width="7"
+           height="1"
+           x="16"
+           y="21" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect179"
+           width="7"
+           height="1"
+           x="16"
+           y="23" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect180"
+           width="7"
+           height="1"
+           x="16"
+           y="25" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect181"
+           width="7"
+           height="1"
+           x="16"
+           y="27" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke-width:0.706421"
+           id="rect182"
+           width="7"
+           height="1"
+           x="16"
+           y="29" />
+      </g>
+    </g>
+  </g>
+</svg>
