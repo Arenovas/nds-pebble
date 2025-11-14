@@ -40,11 +40,11 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 {
 	GRect bounds = layer_get_bounds(layer);
 	GPoint center = grect_center_point(&bounds);
-	center.y = center.y - 5;
+	center.y = center.y;
 
-	const int16_t second_hand_length = (bounds.size.w / 2) - 34;
-	const int16_t minute_hand_length = (bounds.size.w / 2) - 40;
-	const int16_t hour_hand_length = (bounds.size.w / 2) - 46;
+	const int16_t second_hand_length = (bounds.size.w / 2) - 12;
+	const int16_t minute_hand_length = (bounds.size.w / 2) - 14;
+	const int16_t hour_hand_length = (bounds.size.w / 2) - 23;
 
 	time_t now = time(NULL);
 	struct tm *t = localtime(&now);
@@ -72,12 +72,12 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 
 	// second hand
 	graphics_context_set_stroke_width(ctx, 2);
-	graphics_context_set_stroke_color(ctx, GColorDarkGray);
+	graphics_context_set_stroke_color(ctx, GColorRed);
 	graphics_draw_line(ctx, second_hand, center);
 
 	// minute/hour hand
 	//graphics_context_set_fill_color(ctx, GColorBlack);
-	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_context_set_stroke_color(ctx, GColorDarkGray);
 	graphics_draw_line(ctx, minute_hand, center);
 
 	graphics_context_set_stroke_color(ctx, GColorBlack);
@@ -92,8 +92,8 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 	//gpath_draw_outline(ctx, s_hour_arrow);
 
 	// dot in the middle
-	//graphics_context_set_fill_color(ctx, GColorBlack);
-	//graphics_fill_rect(ctx, GRect(bounds.size.w / 2 - 1, bounds.size.h / 2 - 1, 3, 3), 0, GCornerNone);
+	graphics_context_set_fill_color(ctx, GColorBlack);
+	graphics_fill_rect(ctx, GRect(bounds.size.w / 2 - 2, bounds.size.h / 2 - 2, 5, 5), 0, GCornerNone);
 }
 
 static void date_update_proc(Layer *layer, GContext *ctx)
@@ -199,7 +199,8 @@ static void window_load(Window *window)
 
 	layer_add_child(s_date_layer, text_layer_get_layer(s_date_label));
 
-	s_hands_layer = layer_create(bounds);
+	//s_hands_layer = layer_create(bounds);
+	s_hands_layer = layer_create(GRect(25, 32, 95, 95));
 	layer_set_update_proc(s_hands_layer, hands_update_proc);
 	layer_add_child(window_layer, s_hands_layer);
 
