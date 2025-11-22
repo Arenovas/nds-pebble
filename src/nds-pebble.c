@@ -141,72 +141,69 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	graphics_fill_rect(ctx, bounds, 0, GCornerNone);
 	graphics_context_set_stroke_color(ctx, GColorBlack);
 	#if PBL_DISPLAY_HEIGHT == 228
-	//Draw Top Bar Line
 	graphics_draw_line(ctx, GPoint(0, 0), GPoint(200, 0));
-	for(int y = 0; y < 10; y++)
-	{
-		int posy = 1 + (24 * y);
-		for(int x = 0; x < 10; x++)
-		{
-			int posx = -20 + (24 * x);
-			graphics_draw_rect(ctx, GRect(posx, posy, 24, 24));
-			if((x < 2 || x > 7) || (y < 1 || y > 6))
-			{
-				for(int lines = 0; lines < 8; lines++)
-				{
-					GPoint p1 = GPoint(3 + posx, 3 + (lines * 3) + posy);
-					GPoint p2 = GPoint(20 + posx, 3 + (lines * 3) + posy);
-					graphics_draw_line(ctx, p1, p2);
-				}
-			}
-		}
-	}
+	int yOffSet = 1;
+	int xOffSet = -20;
+	int ySqs = 10;
+	int xSqs = 10;
+	int sqSize = 24;
+	int sqGridSize = 24;
+	int lfLineX = 2;
+	int rtLineX = 7;
+	int lfLinePntOffSet = 3;
+	int rtLinePntOffSet = 20;
+	int lineVertOffSet = 3;
 	//Draw Inner and Outer Clock Borders
 	graphics_draw_rect(ctx, GRect(26, 23, 148, 148));
 	graphics_draw_rect(ctx, GRect(25, 22, 150, 150));
 	#elif PBL_DISPLAY_HEIGHT == 180
-	for(int y = 0; y < 10; y++)
-	{
-		int posy = 0 + (16 * y);
-		for(int x = 0; x < 12; x++)
-		{
-			int posx = -7 + (16 * x);
-			graphics_draw_rect(ctx, GRect(posx, posy, 17, 17));
-			if((x < 3 || x > 8) || (y < 1 || y > 6))
-			{
-				for(int lines = 0; lines < 8; lines++)
-				{
-					GPoint p1 = GPoint(2 + posx, 2 + (lines * 2) + posy);
-					GPoint p2 = GPoint(14 + posx, 2 + (lines * 2) + posy);
-					graphics_draw_line(ctx, p1, p2);
-				}
-			}
-		}
-	}
+	int yOffSet = 0;
+	int xOffSet = -7;
+	int ySqs = 10;
+	int xSqs = 12;
+	int sqSize = 17;
+	int sqGridSize = 16;
+	int lfLineX = 3;
+	int rtLineX = 8;
+	int lfLinePntOffSet = 2;
+	int rtLinePntOffSet = 14;
+	int lineVertOffSet = 2;
 	//Draw Clock Border
 	graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
 	#else
-	for(int y = 0; y < 10; y++)
+	int yOffSet = 0;
+	int xOffSet = -8;
+	int ySqs = 10;
+	int xSqs = 10;
+	int sqSize = 17;
+	int sqGridSize = 16;
+	int lfLineX = 2;
+	int rtLineX = 7;
+	int lfLinePntOffSet = 2;
+	int rtLinePntOffSet = 14;
+	int lineVertOffSet = 2;
+	//Draw Clock Border
+	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
+	#endif
+
+	for(int y = 0; y < ySqs; y++)
 	{
-		int posy = 0 + (16 * y);
-		for(int x = 0; x < 10; x++)
+		int posy = yOffSet + (sqGridSize * y);
+		for(int x = 0; x < xSqs; x++)
 		{
-			int posx = -8 + (16 * x);
-			graphics_draw_rect(ctx, GRect(posx, posy, 17, 17));
-			if((x < 2 || x > 7) || (y < 1 || y > 6))
+			int posx = xOffSet + (sqGridSize * x);
+			graphics_draw_rect(ctx, GRect(posx, posy, sqSize, sqSize));
+			if((x < lfLineX || x > rtLineX) || (y < 1 || y > 6))
 			{
 				for(int lines = 0; lines < 8; lines++)
 				{
-					GPoint p1 = GPoint(2 + posx, 2 + (lines * 2) + posy);
-					GPoint p2 = GPoint(14 + posx, 2 + (lines * 2) + posy);
+					GPoint p1 = GPoint(lfLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
+					GPoint p2 = GPoint(rtLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
 					graphics_draw_line(ctx, p1, p2);
 				}
 			}
 		}
 	}
-	//Draw Clock Border
-	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
-	#endif
 
 }
 
