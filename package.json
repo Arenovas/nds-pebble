@@ -12,7 +12,9 @@
     "targetPlatforms": [
       "aplite",
       "basalt",
+      "chalk",
       "diorite",
+      "emery",
       "flint"
     ],
     "enableMultiJS": false,
@@ -27,16 +29,11 @@
     },
     "resources": {
       "media": [
-      {
+        {
           "menuIcon": true,
           "type": "bitmap",
           "name": "IMAGE_MENU_ICON",
           "file": "images/icon.png"
-        },
-        {
-          "type": "bitmap",
-          "name": "IMAGE_BACKGROUND",
-          "file": "images/bg.png"
         },
         {
           "type": "font",
@@ -57,6 +54,11 @@
           "type": "bitmap",
           "name": "BT_ICON_OFF",
           "file": "images/icons/BtOn.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TOPSEP_ICON",
+          "file": "images/icons/TopBarSeperators.png"
         }
       ]
     },
