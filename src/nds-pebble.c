@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include "bgtest.h"
+#include "nds-pebble.h"
 
 static Window *s_main_window;
 static Layer *s_bgsq_layer;
