@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include "nds-pebble.h"
+#include "bgtest.h"
 
 static Window *s_main_window;
 static Layer *s_bgsq_layer;
@@ -374,6 +374,8 @@ static void main_window_unload(Window *window) {
 	gbitmap_destroy(s_bt_icon_bitmap);
 	bitmap_layer_destroy(s_bt_icon_layer);
 	gbitmap_destroy(s_bt_icon_bitmap_on);
+	bitmap_layer_destroy(s_topsep_layer);
+	gbitmap_destroy(s_topsep_bitmap);
 }
 
 static void init() {
