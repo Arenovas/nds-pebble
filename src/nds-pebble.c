@@ -1,25 +1,30 @@
 #include <pebble.h>
 #include "nds-pebble.h"
 
+// Declare globally
 static Window *s_main_window;
+
 static Layer *s_bgsq_layer;
 static Layer *s_topbar_layer;
 static Layer *s_clock_layer;
+static Layer *s_battery_layer;
+static Layer *s_date_layer, *s_hands_layer;
+
 static GPath *s_tick_paths[NUM_CLOCK_TICKS];
 
-static Layer *s_date_layer, *s_hands_layer;
-static TextLayer *s_time_label, *s_date_label;
-static char s_num_buffer[6], s_day_buffer[6];
-// Declare globally
 static GFont s_time_font;
-static BitmapLayer *s_batt_layer;
-static GBitmap *s_batt_bitmap;
+static TextLayer *s_time_label, *s_date_label;
+
+static char s_num_buffer[6], s_day_buffer[6];
 static int s_battery_level;
-static Layer *s_battery_layer;
+
+static BitmapLayer *s_batt_layer;
 static BitmapLayer *s_bt_icon_layer;
+static BitmapLayer *s_topsep_layer;
+
+static GBitmap *s_batt_bitmap;
 static GBitmap *s_bt_icon_bitmap;
 static GBitmap *s_bt_icon_bitmap_on;
-static BitmapLayer *s_topsep_layer;
 static GBitmap *s_topsep_bitmap;
 
 static void hands_update_proc(Layer *layer, GContext *ctx)
@@ -186,15 +191,24 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
 	#endif
 
+	//Draw the background grid with top row first
 	for(int y = 0; y < ySqs; y++)
 	{
+		//Get the Y position based on the offset from the top of the layer, grid size, and the Y level
 		int posy = yOffSet + (sqGridSize * y);
+		//Then calculate the X position of the grid square in the Y row
 		for(int x = 0; x < xSqs; x++)
 		{
+			//Get the X position based on the offset from the left side of the layer, grid size, and the X level
 			int posx = xOffSet + (sqGridSize * x);
+			//Finally draw the grid square itself based on the previous positions and size
+			//The sqGridSize should be 1 minus the sqSize but thanks to rects not using a stroke width of 2 correctly,
+			//it has to be handled with a stroke width of 1 and thus has to be equal to sqSize
 			graphics_draw_rect(ctx, GRect(posx, posy, sqSize, sqSize));
+			//Next, check if the current square is inside or outside of the current clock face bounds
 			if((x < lfLineX || x > rtLineX) || (y < 1 || y > 6))
 			{
+				//If they aren't then iterate through and draw 8 lines with offsets from the left, right, and top of the current square
 				for(int lines = 0; lines < 8; lines++)
 				{
 					GPoint p1 = GPoint(lfLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
