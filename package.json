@@ -41,24 +41,49 @@
           "file": "fonts/NDSBIOS.ttf"
         },
         {
+          "type": "font",
+          "name": "NINTENDO_DS_BIOS_20",
+          "file": "fonts/NDSBIOS.ttf"
+        },
+        {
           "type": "bitmap",
           "name": "BATTERY_ICON",
           "file": "images/icons/Batt.png"
         },
         {
           "type": "bitmap",
-          "name": "BT_ICON_ON",
-          "file": "images/icons/BtOff.png"
+          "name": "BATTERYPT2_ICON",
+          "file": "images/icons/BattPT2.png"
         },
         {
           "type": "bitmap",
-          "name": "BT_ICON_OFF",
+          "name": "BT_ICON_ON",
           "file": "images/icons/BtOn.png"
         },
         {
           "type": "bitmap",
+          "name": "BT_ICON_OFF",
+          "file": "images/icons/BtOff.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BTPT2_ICON_ON",
+          "file": "images/icons/BtOnPT2.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BTPT2_ICON_OFF",
+          "file": "images/icons/BtOffPT2.png"
+        },
+        {
+          "type": "bitmap",
           "name": "TOPSEP_ICON",
-          "file": "images/icons/TopBarSeperators.png"
+          "file": "images/icons/TopBarSeperatorsCombined.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TOPSEPPT2_ICON",
+          "file": "images/icons/TopBarSeperatorsCombinedPT2.png"
         }
       ]
     },
