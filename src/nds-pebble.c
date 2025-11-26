@@ -20,13 +20,14 @@ static char s_num_buffer[6], s_day_buffer[6], s_name_buffer[7];
 static int s_battery_level;
 
 static BitmapLayer *s_batt_layer;
-static BitmapLayer *s_bt_icon_layer;
+static BitmapLayer *s_bt_icon_on_layer;
+static BitmapLayer *s_bt_icon_off_layer;
 static BitmapLayer *s_topsep_layer;
 static BitmapLayer *s_numbersg_layer;
 
 static GBitmap *s_batt_bitmap;
-static GBitmap *s_bt_icon_bitmap;
 static GBitmap *s_bt_icon_bitmap_on;
+static GBitmap *s_bt_icon_bitmap_off;
 static GBitmap *s_topsep_bitmap;
 static GBitmap *s_numbers_bitmap;
 
@@ -110,8 +111,6 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 
 	GRect bounds = layer_get_bounds(layer);
 
-
-
 	#if PBL_DISPLAY_HEIGHT == 228
 	// Find the width of the bar
 	int width = (s_battery_level * 20) / 100;
@@ -141,13 +140,13 @@ static void bluetooth_callback(bool connected)
 	// Show icon if disconnected
 	if(connected)
 	{
-		bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
-		bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap_on);
+		layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_off_layer), true);
+		layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_on_layer), false);
 	}
 	else
 	{
-		bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
-		bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
+		layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_off_layer), false);
+		layer_set_hidden(bitmap_layer_get_layer(s_bt_icon_on_layer), true);
 	}
 }
 
@@ -172,32 +171,28 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	//Draw Inner and Outer Clock Borders
 	graphics_draw_rect(ctx, GRect(26, 23, 148, 148));
 	graphics_draw_rect(ctx, GRect(25, 22, 150, 150));
-	#elif PBL_DISPLAY_HEIGHT == 180
+	#elif PBL_DISPLAY_HEIGHT == 180 || PBL_DISPLAY_HEIGHT == 168
 	int yOffSet = 0;
-	int xOffSet = -7;
 	int ySqs = 10;
-	int xSqs = 12;
 	int sqSize = 17;
 	int sqGridSize = 16;
+	int lfLinePntOffSet = 2;
+	int rtLinePntOffSet = 14;
+	int lineVertOffSet = 2;
+	#endif
+
+	#if PBL_DISPLAY_HEIGHT == 180
+	int xOffSet = -7;
+	int xSqs = 12;
 	int lfLineX = 3;
 	int rtLineX = 8;
-	int lfLinePntOffSet = 2;
-	int rtLinePntOffSet = 14;
-	int lineVertOffSet = 2;
 	//Draw Clock Border
 	graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
-	#else
-	int yOffSet = 0;
+	#elif PBL_DISPLAY_HEIGHT == 168
 	int xOffSet = -8;
-	int ySqs = 10;
 	int xSqs = 10;
-	int sqSize = 17;
-	int sqGridSize = 16;
 	int lfLineX = 2;
 	int rtLineX = 7;
-	int lfLinePntOffSet = 2;
-	int rtLinePntOffSet = 14;
-	int lineVertOffSet = 2;
 	//Draw Clock Border
 	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
 	#endif
@@ -240,30 +235,7 @@ static void topbar_proc(Layer *layer, GContext *ctx)
 
 static void clock_proc(Layer *layer, GContext *ctx)
 {
-	//GRect bounds = layer_get_bounds(layer);
-	//bounds.size.h -= 58;
-	//bounds.size.w -= 49;
-	//bounds.origin.y += 2;
-	//bounds.origin.x += 25;
 	graphics_context_set_fill_color(ctx, GColorBlack);
-	/*//1
-	graphics_fill_rect(ctx, GRect(70, 10, 4, 4), 0, GCornerNone);
-	//2
-	graphics_fill_rect(ctx, GRect(86, 26, 4, 4), 0, GCornerNone);
-	//4
-	graphics_fill_rect(ctx, GRect(86, 70, 4, 4), 0, GCornerNone);
-	//5
-	graphics_fill_rect(ctx, GRect(70, 86, 4, 4), 0, GCornerNone);
-	//7
-	graphics_fill_rect(ctx, GRect(26, 86, 4, 4), 0, GCornerNone);
-	//8
-	graphics_fill_rect(ctx, GRect(10, 70, 4, 4), 0, GCornerNone);
-	//10
-	graphics_fill_rect(ctx, GRect(10, 26, 4, 4), 0, GCornerNone);
-	//11
-	graphics_fill_rect(ctx, GRect(26, 10, 4, 4), 0, GCornerNone);
-	//11
-	graphics_fill_rect(ctx, GRect(47, 47, 5, 5), 0, GCornerNone);*/
 	for (int i = 0; i < NUM_CLOCK_TICKS; ++i)
 	{
 		const int x_offset = 0;
@@ -274,7 +246,8 @@ static void clock_proc(Layer *layer, GContext *ctx)
 }
 
 static void main_window_load(Window *window) {
-		#if PBL_DISPLAY_HEIGHT == 228
+	#if PBL_DISPLAY_HEIGHT == 228
+	int offset = 22;
 	// Create GFont
 	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_20));
 	s_time_label = text_layer_create(GRect(67, -3, 38, 22));
@@ -283,32 +256,52 @@ static void main_window_load(Window *window) {
 	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEPPT2_ICON);
 	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERYPT2_ICON);
 	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUMPT2_ICON);
-	#elif PBL_DISPLAY_HEIGHT == 180
-	// Create GFont
+	s_numbersg_layer = bitmap_layer_create(GRect(25, 44, 150, 150));
+	s_clock_layer = layer_create(GRect(25, 44, 150, 150));
+	// Create battery meter Layer
+	s_battery_layer = layer_create(GRect(174, 4, 24, 14));
+	// Create the BitmapLayer to display the GBitmap
+	s_bt_icon_on_layer = bitmap_layer_create(GRect(146, 3, 22, 16));
+	s_bt_icon_off_layer = bitmap_layer_create(GRect(146, 3, 22, 16));
+	// Create the Bluetooth icon GBitmap
+	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BTPT2_ICON_OFF);
+	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BTPT2_ICON_ON);
+	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 200, 22));
+	#elif PBL_DISPLAY_HEIGHT == 180 || PBL_DISPLAY_HEIGHT == 168
 	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
-	s_time_label = text_layer_create(GRect(50, 8, 29, 15));
-	s_date_label = text_layer_create(GRect(83, 8, 27, 15));
-	//s_name_label = text_layer_create(GRect(3, 8, 47, 15));
-	s_name_label = text_layer_create(GRect(76, -4, 47, 15));
 	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
 	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
 	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUM_ICON);
-	#else
-	// Create GFont
-	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
+	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_OFF);
+	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_ON);
+	#endif
+
+	#if PBL_DISPLAY_HEIGHT == 180
+	int offset = 25;
+	s_time_label = text_layer_create(GRect(50, 8, 29, 15));
+	s_date_label = text_layer_create(GRect(83, 8, 27, 15));
+	s_name_label = text_layer_create(GRect(76, -4, 47, 15));
+	s_numbersg_layer = bitmap_layer_create(GRect(40, 40, 99, 99));
+	s_clock_layer = layer_create(GRect(40, 40, 99, 99));
+	// Create battery meter Layer
+	s_battery_layer = layer_create(GRect(130, 15, 12, 7));
+	// Create the BitmapLayer to display the GBitmap
+	s_bt_icon_on_layer = bitmap_layer_create(GRect(114, 15, 11, 8));
+	s_bt_icon_off_layer = bitmap_layer_create(GRect(114, 15, 11, 8));
+	s_topsep_layer = bitmap_layer_create(GRect(0, 13, 144, 15));
+	#elif PBL_DISPLAY_HEIGHT == 168
+	int offset = 15;
 	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
 	s_date_label = text_layer_create(GRect(83, -3, 27, 15));
 	s_name_label = text_layer_create(GRect(3, -3, 47, 15));
-	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
-	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
-	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUM_ICON);
-	#endif
-	#if PBL_DISPLAY_HEIGHT == 228
-	int offset = 22;
-	#elif PBL_DISPLAY_HEIGHT == 180
-	int offset = 25;
-	#else
-	int offset = 15;
+	s_numbersg_layer = bitmap_layer_create(GRect(23, 30, 99, 99));
+	s_clock_layer = layer_create(GRect(23, 30, 99, 99));
+	// Create battery meter Layer
+	s_battery_layer = layer_create(GRect(130, 4, 12, 7));
+	// Create the BitmapLayer to display the GBitmap
+	s_bt_icon_on_layer = bitmap_layer_create(GRect(114, 4, 11, 8));
+	s_bt_icon_off_layer = bitmap_layer_create(GRect(114, 4, 11, 8));
+	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 144, 15));
 	#endif
 	Layer *window_layer = window_get_root_layer(window);
 	GRect bounds = layer_get_bounds(window_layer);
@@ -322,33 +315,10 @@ static void main_window_load(Window *window) {
 	layer_set_update_proc(s_bgsq_layer, bgsq_proc);
 	layer_add_child(window_get_root_layer(window), s_bgsq_layer);
 
-	#if PBL_DISPLAY_HEIGHT == 228
-	// Create BitmapLayer to display the GBitmap
-	s_numbersg_layer = bitmap_layer_create(GRect(25, 44, 150, 150));
-	#elif PBL_DISPLAY_HEIGHT == 180
-	// Create BitmapLayer to display the GBitmap
-	s_numbersg_layer = bitmap_layer_create(GRect(40, 40, 99, 99));
-	#else
-	// Create BitmapLayer to display the GBitmap
-	s_numbersg_layer = bitmap_layer_create(GRect(23, 30, 99, 99));
-	#endif
 	bitmap_layer_set_compositing_mode(s_numbersg_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_numbersg_layer, s_numbers_bitmap);
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_numbersg_layer));
-	//layer_set_update_proc(s_numbers_layer, clocknum_proc);
-	//layer_add_child(window_get_root_layer(window), s_numbers_layer);
 
-	//s_clock_layer = layer_create(GRect(23, 15, 99, 99));
-	//layer_set_update_proc(s_clock_layer, clock_proc);
-	//layer_add_child(s_bgsq_layer, s_clock_layer);
-
-	#if PBL_DISPLAY_HEIGHT == 228
-	s_clock_layer = layer_create(GRect(25, 44, 150, 150));
-	#elif PBL_DISPLAY_HEIGHT == 180
-	s_clock_layer = layer_create(GRect(40, 40, 99, 99));
-	#else
-	s_clock_layer = layer_create(GRect(23, 30, 99, 99));
-	#endif
 	layer_set_update_proc(s_clock_layer, clock_proc);
 	layer_add_child(window_get_root_layer(window), s_clock_layer);
 
@@ -387,62 +357,21 @@ static void main_window_load(Window *window) {
 	layer_set_update_proc(s_hands_layer, hands_update_proc);
 	layer_add_child(s_clock_layer, s_hands_layer);
 
-	#if PBL_DISPLAY_HEIGHT == 228
-	// Create battery meter Layer
-	s_battery_layer = layer_create(GRect(174, 4, 24, 14));
-	// Create the BitmapLayer to display the GBitmap
-	s_bt_icon_layer = bitmap_layer_create(GRect(146, 3, 22, 16));
-	// Create the Bluetooth icon GBitmap
-	s_bt_icon_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BTPT2_ICON_OFF);
-	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BTPT2_ICON_ON);
-	#elif PBL_DISPLAY_HEIGHT == 180
-	// Create battery meter Layer
-	s_battery_layer = layer_create(GRect(130, 15, 12, 7));
-	// Create the BitmapLayer to display the GBitmap
-	s_bt_icon_layer = bitmap_layer_create(GRect(114, 15, 11, 8));
-	// Create the Bluetooth icon GBitmap
-	s_bt_icon_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_OFF);
-	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_ON);
-	#else
-	// Create battery meter Layer
-	s_battery_layer = layer_create(GRect(130, 4, 12, 7));
-	// Create the BitmapLayer to display the GBitmap
-	s_bt_icon_layer = bitmap_layer_create(GRect(114, 4, 11, 8));
-	// Create the Bluetooth icon GBitmap
-	s_bt_icon_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_OFF);
-	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_ON);
-	#endif
+	bitmap_layer_set_compositing_mode(s_bt_icon_on_layer, GCompOpSet);
+	bitmap_layer_set_bitmap(s_bt_icon_on_layer, s_bt_icon_bitmap_on);
+	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_on_layer));
+
+	bitmap_layer_set_compositing_mode(s_bt_icon_on_layer, GCompOpSet);
+	bitmap_layer_set_bitmap(s_bt_icon_off_layer, s_bt_icon_bitmap_off);
+	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_off_layer));
 
 	layer_set_update_proc(s_battery_layer, battery_update_proc);
-
-	// Add to Window
 	layer_add_child(window_get_root_layer(window), s_battery_layer);
-
 	
-
-	bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
-	bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
-	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer));
-
 	s_batt_layer = bitmap_layer_create(layer_get_bounds(s_battery_layer));
 	bitmap_layer_set_compositing_mode(s_batt_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_batt_layer, s_batt_bitmap);
 	layer_add_child(s_battery_layer, bitmap_layer_get_layer(s_batt_layer));
-
-		#if PBL_DISPLAY_HEIGHT == 228
-	// Create GBitmap
-
-	// Create BitmapLayer to display the GBitmap
-	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 200, 22));
-	#elif PBL_DISPLAY_HEIGHT == 180
-
-	// Create BitmapLayer to display the GBitmap
-	s_topsep_layer = bitmap_layer_create(GRect(0, 13, 144, 15));
-	#else
-
-	// Create BitmapLayer to display the GBitmap
-	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 144, 15));
-	#endif
 
 	bitmap_layer_set_compositing_mode(s_topsep_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_topsep_layer, s_topsep_bitmap);
@@ -476,8 +405,9 @@ static void main_window_unload(Window *window) {
 	// Destroy battery icon
 	layer_destroy(s_battery_layer);
 
-	gbitmap_destroy(s_bt_icon_bitmap);
-	bitmap_layer_destroy(s_bt_icon_layer);
+	bitmap_layer_destroy(s_bt_icon_off_layer);
+	gbitmap_destroy(s_bt_icon_bitmap_off);
+	bitmap_layer_destroy(s_bt_icon_on_layer);
 	gbitmap_destroy(s_bt_icon_bitmap_on);
 	bitmap_layer_destroy(s_topsep_layer);
 	gbitmap_destroy(s_topsep_bitmap);
