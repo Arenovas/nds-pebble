@@ -9,6 +9,7 @@ static Layer *s_topbar_layer;
 static Layer *s_clock_layer;
 static Layer *s_battery_layer;
 static Layer *s_date_layer, *s_hands_layer;
+static Layer *s_numbers_layer;
 
 static GPath *s_tick_paths[NUM_CLOCK_TICKS];
 
@@ -21,11 +22,13 @@ static int s_battery_level;
 static BitmapLayer *s_batt_layer;
 static BitmapLayer *s_bt_icon_layer;
 static BitmapLayer *s_topsep_layer;
+static BitmapLayer *s_numbersg_layer;
 
 static GBitmap *s_batt_bitmap;
 static GBitmap *s_bt_icon_bitmap;
 static GBitmap *s_bt_icon_bitmap_on;
 static GBitmap *s_topsep_bitmap;
+static GBitmap *s_numbers_bitmap;
 
 static void hands_update_proc(Layer *layer, GContext *ctx)
 {
@@ -116,8 +119,6 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 	// Draw the bar
 	graphics_context_set_fill_color(ctx, GColorGreen);
 	graphics_fill_rect(ctx, GRect(4, 0, width, bounds.size.h), 0, GCornerNone);
-	// Create GBitmap
-	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERYPT2_ICON);
 	#elif PBL_DISPLAY_HEIGHT == 180
 	// Find the width of the bar
 	int width = (s_battery_level * 9) / 100;
@@ -125,8 +126,6 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 	// Draw the bar
 	graphics_context_set_fill_color(ctx, GColorGreen);
 	graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
-	// Create GBitmap
-	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
 	#else
 	// Find the width of the bar
 	int width = (s_battery_level * 9) / 100;
@@ -134,17 +133,7 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 	// Draw the bar
 	graphics_context_set_fill_color(ctx, GColorBlack);
 	graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
-	// Create GBitmap
-	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
 	#endif
-	
-
-	// Create BitmapLayer to display the GBitmap
-	s_batt_layer = bitmap_layer_create(bounds);
-
-	bitmap_layer_set_compositing_mode(s_batt_layer, GCompOpSet);
-	bitmap_layer_set_bitmap(s_batt_layer, s_batt_bitmap);
-	layer_add_child(layer, bitmap_layer_get_layer(s_batt_layer));
 }
 
 static void bluetooth_callback(bool connected)
@@ -240,7 +229,6 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 			}
 		}
 	}
-
 }
 
 static void topbar_proc(Layer *layer, GContext *ctx)
@@ -248,30 +236,6 @@ static void topbar_proc(Layer *layer, GContext *ctx)
 	GRect bounds = layer_get_bounds(layer);
 	graphics_context_set_fill_color(ctx, GColorWhite);
 	graphics_fill_rect(ctx, bounds, 0, GCornerNone);
-
-	#if PBL_DISPLAY_HEIGHT == 228
-	// Create GBitmap
-	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEPPT2_ICON);
-
-	// Create BitmapLayer to display the GBitmap
-	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 200, 22));
-	#elif PBL_DISPLAY_HEIGHT == 180
-	// Create GBitmap
-	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
-
-	// Create BitmapLayer to display the GBitmap
-	s_topsep_layer = bitmap_layer_create(GRect(0, 13, 144, 15));
-	#else
-	// Create GBitmap
-	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
-
-	// Create BitmapLayer to display the GBitmap
-	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 144, 15));
-	#endif
-
-	bitmap_layer_set_compositing_mode(s_topsep_layer, GCompOpSet);
-	bitmap_layer_set_bitmap(s_topsep_layer, s_topsep_bitmap);
-	layer_add_child(layer, bitmap_layer_get_layer(s_topsep_layer));
 }
 
 static void clock_proc(Layer *layer, GContext *ctx)
@@ -310,6 +274,35 @@ static void clock_proc(Layer *layer, GContext *ctx)
 }
 
 static void main_window_load(Window *window) {
+		#if PBL_DISPLAY_HEIGHT == 228
+	// Create GFont
+	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_20));
+	s_time_label = text_layer_create(GRect(67, -3, 38, 22));
+	s_date_label = text_layer_create(GRect(109, -3, 39, 22));
+	s_name_label = text_layer_create(GRect(6, -3, 61, 22));
+	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEPPT2_ICON);
+	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERYPT2_ICON);
+	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUMPT2_ICON);
+	#elif PBL_DISPLAY_HEIGHT == 180
+	// Create GFont
+	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
+	s_time_label = text_layer_create(GRect(50, 8, 29, 15));
+	s_date_label = text_layer_create(GRect(83, 8, 27, 15));
+	//s_name_label = text_layer_create(GRect(3, 8, 47, 15));
+	s_name_label = text_layer_create(GRect(76, -4, 47, 15));
+	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
+	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
+	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUM_ICON);
+	#else
+	// Create GFont
+	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
+	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
+	s_date_label = text_layer_create(GRect(83, -3, 27, 15));
+	s_name_label = text_layer_create(GRect(3, -3, 47, 15));
+	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
+	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
+	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUM_ICON);
+	#endif
 	#if PBL_DISPLAY_HEIGHT == 228
 	int offset = 22;
 	#elif PBL_DISPLAY_HEIGHT == 180
@@ -324,9 +317,26 @@ static void main_window_load(Window *window) {
 	layer_bounds.size.h -= offset;
 	layer_bounds.origin.y += offset;
 	s_bgsq_layer = layer_create(layer_bounds);
+	s_numbers_layer = layer_create(layer_bounds);
 
 	layer_set_update_proc(s_bgsq_layer, bgsq_proc);
 	layer_add_child(window_get_root_layer(window), s_bgsq_layer);
+
+	#if PBL_DISPLAY_HEIGHT == 228
+	// Create BitmapLayer to display the GBitmap
+	s_numbersg_layer = bitmap_layer_create(GRect(25, 44, 150, 150));
+	#elif PBL_DISPLAY_HEIGHT == 180
+	// Create BitmapLayer to display the GBitmap
+	s_numbersg_layer = bitmap_layer_create(GRect(40, 40, 99, 99));
+	#else
+	// Create BitmapLayer to display the GBitmap
+	s_numbersg_layer = bitmap_layer_create(GRect(23, 30, 99, 99));
+	#endif
+	bitmap_layer_set_compositing_mode(s_numbersg_layer, GCompOpSet);
+	bitmap_layer_set_bitmap(s_numbersg_layer, s_numbers_bitmap);
+	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_numbersg_layer));
+	//layer_set_update_proc(s_numbers_layer, clocknum_proc);
+	//layer_add_child(window_get_root_layer(window), s_numbers_layer);
 
 	//s_clock_layer = layer_create(GRect(23, 15, 99, 99));
 	//layer_set_update_proc(s_clock_layer, clock_proc);
@@ -349,27 +359,6 @@ static void main_window_load(Window *window) {
 	layer_set_update_proc(s_topbar_layer, topbar_proc);
 	layer_add_child(window_get_root_layer(window), s_topbar_layer);
 
-
-	#if PBL_DISPLAY_HEIGHT == 228
-	// Create GFont
-	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_20));
-	s_time_label = text_layer_create(GRect(67, -3, 38, 22));
-	s_date_label = text_layer_create(GRect(109, -3, 39, 22));
-	s_name_label = text_layer_create(GRect(6, -3, 61, 22));
-	#elif PBL_DISPLAY_HEIGHT == 180
-	// Create GFont
-	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
-	s_time_label = text_layer_create(GRect(50, 8, 29, 15));
-	s_date_label = text_layer_create(GRect(83, 8, 27, 15));
-	//s_name_label = text_layer_create(GRect(3, 8, 47, 15));
-	s_name_label = text_layer_create(GRect(76, -4, 47, 15));
-	#else
-	// Create GFont
-	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
-	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
-	s_date_label = text_layer_create(GRect(83, -3, 27, 15));
-	s_name_label = text_layer_create(GRect(3, -3, 47, 15));
-	#endif
 	s_date_layer = layer_create(bounds);
 	layer_set_update_proc(s_date_layer, date_update_proc);
 	layer_add_child(s_topbar_layer, s_date_layer);
@@ -434,6 +423,30 @@ static void main_window_load(Window *window) {
 	bitmap_layer_set_compositing_mode(s_bt_icon_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_bt_icon_layer, s_bt_icon_bitmap);
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_bt_icon_layer));
+
+	s_batt_layer = bitmap_layer_create(layer_get_bounds(s_battery_layer));
+	bitmap_layer_set_compositing_mode(s_batt_layer, GCompOpSet);
+	bitmap_layer_set_bitmap(s_batt_layer, s_batt_bitmap);
+	layer_add_child(s_battery_layer, bitmap_layer_get_layer(s_batt_layer));
+
+		#if PBL_DISPLAY_HEIGHT == 228
+	// Create GBitmap
+
+	// Create BitmapLayer to display the GBitmap
+	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 200, 22));
+	#elif PBL_DISPLAY_HEIGHT == 180
+
+	// Create BitmapLayer to display the GBitmap
+	s_topsep_layer = bitmap_layer_create(GRect(0, 13, 144, 15));
+	#else
+
+	// Create BitmapLayer to display the GBitmap
+	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 144, 15));
+	#endif
+
+	bitmap_layer_set_compositing_mode(s_topsep_layer, GCompOpSet);
+	bitmap_layer_set_bitmap(s_topsep_layer, s_topsep_bitmap);
+	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_topsep_layer));
 }
 
 static void main_window_unload(Window *window) {
@@ -442,6 +455,7 @@ static void main_window_unload(Window *window) {
 	layer_destroy(s_clock_layer);
 
 	layer_destroy(s_date_layer);
+	layer_destroy(s_numbers_layer);
 
 	// Destroy BitmapLayer
 	bitmap_layer_destroy(s_batt_layer);
@@ -467,6 +481,8 @@ static void main_window_unload(Window *window) {
 	gbitmap_destroy(s_bt_icon_bitmap_on);
 	bitmap_layer_destroy(s_topsep_layer);
 	gbitmap_destroy(s_topsep_bitmap);
+	bitmap_layer_destroy(s_numbersg_layer);
+	gbitmap_destroy(s_numbers_bitmap);
 }
 
 static void init() {

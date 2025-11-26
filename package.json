@@ -84,6 +84,16 @@
           "type": "bitmap",
           "name": "TOPSEPPT2_ICON",
           "file": "images/icons/TopBarSeperatorsCombinedPT2.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CLOCKNUM_ICON",
+          "file": "images/icons/ClockNumbers.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CLOCKNUMPT2_ICON",
+          "file": "images/icons/ClockNumbersPT2.png"
         }
       ]
     },
