@@ -64,21 +64,25 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 		.y = (int16_t)(-cos_lookup(hour_angle) * (int32_t)hour_hand_length / TRIG_MAX_RATIO) + center.y,
 	};
 
-	// second hand
-	graphics_context_set_stroke_width(ctx, 2);
-	graphics_context_set_stroke_color(ctx, GColorRed);
-	graphics_draw_line(ctx, second_hand, center);
-
 	// minute/hour hand
+	graphics_context_set_stroke_width(ctx, 2);
 	graphics_context_set_stroke_color(ctx, GColorDarkGray);
 	graphics_draw_line(ctx, minute_hand, center);
 
 	graphics_context_set_stroke_color(ctx, GColorBlack);
 	graphics_draw_line(ctx, hour_hand, center);
 
+	// second hand
+	graphics_context_set_stroke_color(ctx, GColorRed);
+	graphics_draw_line(ctx, second_hand, center);
+
 	// dot in the middle
 	graphics_context_set_fill_color(ctx, GColorBlack);
+	#if PBL_DISPLAY_HEIGHT == 228
+	graphics_fill_rect(ctx, GRect(bounds.size.w / 2 - 4, bounds.size.h / 2 - 4, 8, 8), 0, GCornerNone);
+	#else
 	graphics_fill_rect(ctx, GRect(bounds.size.w / 2 - 2, bounds.size.h / 2 - 2, 5, 5), 0, GCornerNone);
+	#endif
 }
 
 static void date_update_proc(Layer *layer, GContext *ctx)
