@@ -114,27 +114,23 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 {
 
 	GRect bounds = layer_get_bounds(layer);
+#	if PBL_COLOR
+		graphics_context_set_fill_color(ctx, GColorGreen);
+	#else
+		graphics_context_set_fill_color(ctx, GColorBlack);
+	#endif
 
 	#if PBL_DISPLAY_HEIGHT == 228
 	// Find the width of the bar
 	int width = (s_battery_level * 20) / 100;
 
 	// Draw the bar
-	graphics_context_set_fill_color(ctx, GColorGreen);
 	graphics_fill_rect(ctx, GRect(4, 0, width, bounds.size.h), 0, GCornerNone);
-	#elif PBL_DISPLAY_HEIGHT == 180
-	// Find the width of the bar
-	int width = (s_battery_level * 9) / 100;
-
-	// Draw the bar
-	graphics_context_set_fill_color(ctx, GColorGreen);
-	graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
 	#else
 	// Find the width of the bar
 	int width = (s_battery_level * 9) / 100;
 
 	// Draw the bar
-	graphics_context_set_fill_color(ctx, GColorBlack);
 	graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
 	#endif
 }
