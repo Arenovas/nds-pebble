@@ -16,7 +16,7 @@ static GPath *s_tick_paths[NUM_CLOCK_TICKS];
 static GFont s_time_font;
 static TextLayer *s_time_label, *s_date_label, *s_name_label;
 
-static char s_num_buffer[6], s_day_buffer[6], s_name_buffer[7];
+static char s_num_buffer[6], s_day_buffer[6], s_name_buffer[11];
 static int s_battery_level;
 
 static BitmapLayer *s_batt_layer;
@@ -31,6 +31,41 @@ static GBitmap *s_bt_icon_bitmap_off;
 static GBitmap *s_topsep_bitmap;
 static GBitmap *s_numbers_bitmap;
 
+// A struct for our specific settings (see main.h)
+ClaySettings settings;
+
+// Initialize the default settings
+static void default_settings() {
+	//settings.BackgroundColor = GColorBlack;
+	//settings.ForegroundColor = GColorWhite;
+	settings.SecondTick = true;
+	//settings.Animations = false;
+}
+
+// Read settings from persistent storage
+static void load_settings() {
+	// Load the default settings
+	default_settings();
+	// Read settings from persistent storage, if they exist
+	persist_read_data(SETTINGS_KEY, &settings, sizeof(settings));
+}
+
+// Save the settings to persistent storage
+static void save_settings() {
+	persist_write_data(SETTINGS_KEY, &settings, sizeof(settings));
+	// Update the display based on new settings
+	//update_display();
+}
+
+static void inbox_received_handler(DictionaryIterator *iter, void *context) {
+	// Read boolean preferences
+	Tuple *second_tick_t = dict_find(iter, MESSAGE_KEY_SecondTick);
+	if(second_tick_t) {
+		settings.SecondTick = second_tick_t->value->int32 == 1;
+	}
+	save_settings();
+}
+
 static void hands_update_proc(Layer *layer, GContext *ctx)
 {
 	GRect bounds = layer_get_bounds(layer);
@@ -42,9 +77,16 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 
 	time_t now = time(NULL);
 	struct tm *t = localtime(&now);
+	int32_t second_angle;
 
-	//Draw the second hand
-	int32_t second_angle = TRIG_MAX_ANGLE * t->tm_sec / 60;
+	if (settings.SecondTick) {
+		//Draw the second hand
+		second_angle = TRIG_MAX_ANGLE * t->tm_sec / 60;
+	}
+	else
+	{
+		second_angle = 0;
+	}
 	GPoint second_hand = {
 		.x = (int16_t)(sin_lookup(second_angle) * (int32_t)second_hand_length / TRIG_MAX_RATIO) + center.x,
 		.y = (int16_t)(-cos_lookup(second_angle) * (int32_t)second_hand_length / TRIG_MAX_RATIO) + center.y,
@@ -72,9 +114,11 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 	graphics_context_set_stroke_color(ctx, GColorBlack);
 	graphics_draw_line(ctx, hour_hand, center);
 
+	if (settings.SecondTick) {
 	// second hand
 	graphics_context_set_stroke_color(ctx, GColorRed);
 	graphics_draw_line(ctx, second_hand, center);
+	}
 
 	// dot in the middle
 	graphics_context_set_fill_color(ctx, GColorBlack);
@@ -90,9 +134,16 @@ static void date_update_proc(Layer *layer, GContext *ctx)
 	time_t now = time(NULL);
 	struct tm *t = localtime(&now);
 
-	strftime(s_day_buffer, sizeof(s_day_buffer), "%R", t);
-	text_layer_set_text(s_time_label, s_day_buffer);
-
+	if(clock_is_24h_style())
+	{
+		strftime(s_day_buffer, sizeof(s_day_buffer), "%R", t);
+		text_layer_set_text(s_time_label, s_day_buffer);
+	}
+	else
+	{
+		strftime(s_day_buffer, sizeof(s_day_buffer), "%r", t);
+		text_layer_set_text(s_time_label, s_day_buffer);
+	}
 	strftime(s_num_buffer, sizeof(s_num_buffer), "%D", t);
 	text_layer_set_text(s_date_label, s_num_buffer);
 }
@@ -367,7 +418,7 @@ static void main_window_load(Window *window) {
 
 	layer_set_update_proc(s_battery_layer, battery_update_proc);
 	layer_add_child(window_get_root_layer(window), s_battery_layer);
-	
+
 	s_batt_layer = bitmap_layer_create(layer_get_bounds(s_battery_layer));
 	bitmap_layer_set_compositing_mode(s_batt_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_batt_layer, s_batt_bitmap);
@@ -416,6 +467,7 @@ static void main_window_unload(Window *window) {
 }
 
 static void init() {
+	load_settings();
 	// Create main Window element and assign to pointer
 	s_main_window = window_create();
 
@@ -455,6 +507,9 @@ static void init() {
 
 	// Show the correct state of the BT connection from the start
 	bluetooth_callback(connection_service_peek_pebble_app_connection());
+
+	app_message_register_inbox_received(inbox_received_handler);
+	app_message_open(128, 128);
 }
 
 static void deinit() {

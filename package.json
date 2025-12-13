@@ -1,12 +1,13 @@
 {
   "name": "nds-pebble",
   "author": "Arenovas",
-  "version": "1.2.0",
-  "private": true,
+  "version": "1.3.0",
   "keywords": [
     "pebble-app"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "pebble-clay": "^1.0.4"
+  },
   "pebble": {
     "sdkVersion": "3",
     "targetPlatforms": [
@@ -14,11 +15,12 @@
       "basalt",
       "chalk",
       "diorite",
-      "emery",
-      "flint"
+      "emery"
     ],
-    "enableMultiJS": false,
-    "capabilities": [],
+    "enableMultiJS": true,
+    "capabilities": [
+      "configurable"
+    ],
     "projectType": "native",
     "displayName": "NDS Pebble",
     "uuid": "0c341bf9-f913-458d-9414-ca3ced950f3f",
@@ -97,6 +99,8 @@
         }
       ]
     },
-    "messageKeys": {}
+    "messageKeys": [
+        "SecondTick"
+    ]
   }
 }

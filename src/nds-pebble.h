@@ -2,6 +2,16 @@
 
 #include "pebble.h"
 
+#define SETTINGS_KEY 1
+
+// A structure containing our settings
+typedef struct ClaySettings {
+  //GColor BackgroundColor;
+  //GColor ForegroundColor;
+  bool SecondTick;
+  //bool Animations;
+} ClaySettings;
+
 #define NUM_CLOCK_TICKS 9
 
 static const struct GPathInfo ANALOG_BG_POINTS[] = {
