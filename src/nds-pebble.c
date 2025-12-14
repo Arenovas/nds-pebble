@@ -57,11 +57,26 @@ static void save_settings() {
 	//update_display();
 }
 
+
+static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed)
+{
+	layer_mark_dirty(window_get_root_layer(s_main_window));
+}
+
 static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 	// Read boolean preferences
 	Tuple *second_tick_t = dict_find(iter, MESSAGE_KEY_SecondTick);
 	if(second_tick_t) {
 		settings.SecondTick = second_tick_t->value->int32 == 1;
+		tick_timer_service_unsubscribe();
+		if(settings.SecondTick)
+		{
+			tick_timer_service_subscribe(SECOND_UNIT, handle_second_tick);
+		}
+		else
+		{
+			tick_timer_service_subscribe(MINUTE_UNIT, handle_second_tick);
+		}
 	}
 	save_settings();
 }
@@ -146,11 +161,6 @@ static void date_update_proc(Layer *layer, GContext *ctx)
 	}
 	strftime(s_num_buffer, sizeof(s_num_buffer), "%D", t);
 	text_layer_set_text(s_date_label, s_num_buffer);
-}
-
-static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed)
-{
-	layer_mark_dirty(window_get_root_layer(s_main_window));
 }
 
 static void battery_callback(BatteryChargeState state)
