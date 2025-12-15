@@ -15,6 +15,7 @@ typedef struct ClaySettings {
   bool SecondTick;
   //bool Animations;
   int FavColor;
+  int DateFormat;
 } ClaySettings;
 
 #define NUM_CLOCK_TICKS 9
