@@ -77,7 +77,7 @@
           "name": "BTPT2_ICON_OFF",
           "file": "images/icons/BtPT2Off.png"
         },
-                {
+        {
           "type": "bitmap",
           "name": "BTCOLOR_ICON_ON",
           "file": "images/icons/BtColorOn.png"
@@ -125,8 +125,9 @@
       ]
     },
     "messageKeys": [
-        "SecondTick",
-        "FavColor"
+      "SecondTick",
+      "FavColor",
+      "DateFormat"
     ]
   }
 }

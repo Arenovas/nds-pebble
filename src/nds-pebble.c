@@ -44,6 +44,7 @@ static void default_settings() {
 	//settings.ForegroundColor = GColorWhite;
 	settings.SecondTick = true;
 	settings.FavColor = 0;
+	settings.DateFormat = 0;
 	//settings.Animations = false;
 }
 
@@ -143,6 +144,11 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 	{
 		settings.FavColor = atoi(fav_color_t->value->cstring);
 	}
+	Tuple *date_format_t = dict_find(iter, MESSAGE_KEY_DateFormat);
+	if(date_format_t)
+	{
+		settings.DateFormat = atoi(date_format_t->value->cstring);
+	}
 	save_settings();
 }
 
@@ -225,8 +231,21 @@ static void date_update_proc(Layer *layer, GContext *ctx)
 		strftime(s_day_buffer, sizeof(s_day_buffer), "%r", t);
 		text_layer_set_text(s_time_label, s_day_buffer);
 	}
-	strftime(s_num_buffer, sizeof(s_num_buffer), "%D", t);
-	text_layer_set_text(s_date_label, s_num_buffer);
+	if (settings.DateFormat == 0)
+	{
+		strftime(s_num_buffer, sizeof(s_num_buffer), "%m/%d", t);
+		text_layer_set_text(s_date_label, s_num_buffer);
+	}
+	else if (settings.DateFormat == 1)
+	{
+		strftime(s_num_buffer, sizeof(s_num_buffer), "%d/%m", t);
+		text_layer_set_text(s_date_label, s_num_buffer);
+	}
+	else if (settings.DateFormat == 2)
+	{
+		strftime(s_num_buffer, sizeof(s_num_buffer), "%m/%y", t);
+		text_layer_set_text(s_date_label, s_num_buffer);
+	}
 }
 
 static void battery_callback(BatteryChargeState state)

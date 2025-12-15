@@ -118,6 +118,26 @@ module.exports = [
                     "value": "15"
                 }
             ]
+        },
+        {
+            "type": "select",
+            "messageKey": "DateFormat",
+            "defaultValue": "0",
+            "label": "Date Format",
+            "options": [
+                {
+                    "label": "mm/dd",
+                    "value": "0"
+                },
+                {
+                    "label": "dd/mm",
+                    "value": "1"
+                },
+                {
+                    "label": "mm/yy",
+                    "value": "2"
+                }
+            ]
         }
     ]
 },
