@@ -241,8 +241,52 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 {
 
 	GRect bounds = layer_get_bounds(layer);
+
 	#if PBL_COLOR
-		graphics_context_set_fill_color(ctx, GColorGreen);
+	GColor* pal = gbitmap_get_palette(s_batt_bitmap);
+	//Border
+	pal[0] = GColorBlack;
+	//Transparent
+	pal[1] = GColorClear;
+	//Unused
+	pal[2] = GColorBlack;
+	//Inner
+	if(s_battery_level >= 50)
+	{
+		pal[3] = GColorIslamicGreen;
+	}
+	else if(s_battery_level >= 25 && s_battery_level <= 50)
+	{
+		pal[3] = GColorChromeYellow;
+	}
+	else if(s_battery_level <= 25)
+	{
+		pal[3] = GColorRed;
+	}
+	graphics_context_set_compositing_mode(ctx, GCompOpSet);
+	graphics_draw_bitmap_in_rect(ctx, s_batt_bitmap, bounds);
+	#if PBL_DISPLAY_HEIGHT == 228
+	// Draw the bar
+	graphics_fill_rect(ctx, GRect(4, 0, 16, bounds.size.h), 0, GCornerNone);
+	#else
+	// Draw the bar
+	graphics_fill_rect(ctx, GRect(2, 0, 8, bounds.size.h), 0, GCornerNone);
+	#endif
+	#endif
+
+	#if PBL_COLOR
+		if(s_battery_level >= 50)
+		{
+			graphics_context_set_fill_color(ctx, GColorMalachite);
+		}
+		else if(s_battery_level >= 25 && s_battery_level <= 49)
+		{
+			graphics_context_set_fill_color(ctx, GColorYellow);
+		}
+		else if(s_battery_level <= 24)
+		{
+			graphics_context_set_fill_color(ctx, GColorSunsetOrange);
+		}
 	#else
 		graphics_context_set_fill_color(ctx, GColorBlack);
 	#endif
@@ -260,6 +304,7 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 	// Draw the bar
 	graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
 	#endif
+
 }
 
 static void bluetooth_callback(bool connected)
