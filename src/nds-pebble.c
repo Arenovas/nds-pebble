@@ -249,13 +249,13 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 
 	#if PBL_DISPLAY_HEIGHT == 228
 	// Find the width of the bar
-	int width = (s_battery_level * 20) / 100;
+	int width = (s_battery_level * 16) / 100;
 
 	// Draw the bar
 	graphics_fill_rect(ctx, GRect(4, 0, width, bounds.size.h), 0, GCornerNone);
 	#else
 	// Find the width of the bar
-	int width = (s_battery_level * 9) / 100;
+	int width = (s_battery_level * 8) / 100;
 
 	// Draw the bar
 	graphics_fill_rect(ctx, GRect(2, 0, width, bounds.size.h), 0, GCornerNone);
