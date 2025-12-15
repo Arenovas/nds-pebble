@@ -125,9 +125,9 @@
       ]
     },
     "messageKeys": [
-      "SecondTick",
-      "FavColor",
-      "DateFormat"
+        "SecondTick",
+        "FavColor",
+        "DateFormat"
     ]
   }
 }
