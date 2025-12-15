@@ -261,7 +261,7 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 	}
 	else if(s_battery_level <= 25)
 	{
-		pal[3] = GColorRed;
+		pal[3] = GColorDarkCandyAppleRed;
 	}
 	graphics_context_set_compositing_mode(ctx, GCompOpSet);
 	graphics_draw_bitmap_in_rect(ctx, s_batt_bitmap, bounds);
@@ -285,7 +285,7 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 		}
 		else if(s_battery_level <= 24)
 		{
-			graphics_context_set_fill_color(ctx, GColorSunsetOrange);
+			graphics_context_set_fill_color(ctx, GColorRed);
 		}
 	#else
 		graphics_context_set_fill_color(ctx, GColorBlack);
@@ -392,7 +392,9 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 				//If they aren't then iterate through and draw 8 lines with offsets from the left, right, and top of the current square
 				for(int lines = 0; lines < 8; lines++)
 				{
+					#if PBL_COLOR
 					graphics_context_set_stroke_color(ctx, GColorLightGray);
+					#endif
 					GPoint p1 = GPoint(lfLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
 					GPoint p2 = GPoint(rtLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
 					graphics_draw_line(ctx, p1, p2);
