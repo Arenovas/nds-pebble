@@ -141,7 +141,7 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 	Tuple *fav_color_t = dict_find(iter, MESSAGE_KEY_FavColor);
 	if(fav_color_t)
 	{
-		settings.FavColor = fav_color_t->value->int32;
+		settings.FavColor = atoi(fav_color_t->value->cstring);
 	}
 	save_settings();
 }
@@ -196,6 +196,7 @@ static void hands_update_proc(Layer *layer, GContext *ctx)
 
 	if (settings.SecondTick) {
 	// second hand
+	//graphics_context_set_stroke_color(ctx, middleColors[settings.FavColor]);
 	graphics_context_set_stroke_color(ctx, GColorRed);
 	graphics_draw_line(ctx, second_hand, center);
 	}
