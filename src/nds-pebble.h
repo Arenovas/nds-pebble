@@ -2,6 +2,10 @@
 
 #include "pebble.h"
 
+static GColor bottomColors[16];
+static GColor middleColors[16];
+static GColor topColors[16];
+
 #define SETTINGS_KEY 1
 
 // A structure containing our settings
@@ -10,6 +14,7 @@ typedef struct ClaySettings {
   //GColor ForegroundColor;
   bool SecondTick;
   //bool Animations;
+  int FavColor;
 } ClaySettings;
 
 #define NUM_CLOCK_TICKS 9

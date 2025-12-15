@@ -70,12 +70,22 @@
         {
           "type": "bitmap",
           "name": "BTPT2_ICON_ON",
-          "file": "images/icons/BtOnPT2.png"
+          "file": "images/icons/BtPT2On.png"
         },
         {
           "type": "bitmap",
           "name": "BTPT2_ICON_OFF",
-          "file": "images/icons/BtOffPT2.png"
+          "file": "images/icons/BtPT2Off.png"
+        },
+                {
+          "type": "bitmap",
+          "name": "BTCOLOR_ICON_ON",
+          "file": "images/icons/BtColorOn.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BTCOLOR_ICON_OFF",
+          "file": "images/icons/BtColorOff.png"
         },
         {
           "type": "bitmap",
@@ -96,11 +106,27 @@
           "type": "bitmap",
           "name": "CLOCKNUMPT2_ICON",
           "file": "images/icons/ClockNumbersPT2.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TOPBAR_ICON",
+          "file": "images/bar.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TOPBARRND_ICON",
+          "file": "images/barrnd.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TOPBARPT2_ICON",
+          "file": "images/barpt2.png"
         }
       ]
     },
     "messageKeys": [
-        "SecondTick"
+        "SecondTick",
+        "FavColor"
     ]
   }
 }

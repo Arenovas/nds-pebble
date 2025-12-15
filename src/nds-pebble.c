@@ -24,12 +24,16 @@ static BitmapLayer *s_bt_icon_on_layer;
 static BitmapLayer *s_bt_icon_off_layer;
 static BitmapLayer *s_topsep_layer;
 static BitmapLayer *s_numbersg_layer;
+static BitmapLayer *s_topbargradient_layer;
 
 static GBitmap *s_batt_bitmap;
 static GBitmap *s_bt_icon_bitmap_on;
 static GBitmap *s_bt_icon_bitmap_off;
 static GBitmap *s_topsep_bitmap;
 static GBitmap *s_numbers_bitmap;
+static GBitmap *s_topbargradient_bitmap;
+
+//static const GColor bottomColors[] = { GColorMidnightGreen, GColorBulgarianRose};
 
 // A struct for our specific settings (see main.h)
 ClaySettings settings;
@@ -39,6 +43,7 @@ static void default_settings() {
 	//settings.BackgroundColor = GColorBlack;
 	//settings.ForegroundColor = GColorWhite;
 	settings.SecondTick = true;
+	settings.FavColor = 0;
 	//settings.Animations = false;
 }
 
@@ -57,6 +62,61 @@ static void save_settings() {
 	//update_display();
 }
 
+static void set_colors()
+{
+	bottomColors[0] = GColorMidnightGreen;
+	bottomColors[1] = GColorBulgarianRose;
+	bottomColors[2] = GColorRed;
+	bottomColors[3] = GColorShockingPink;
+	bottomColors[4] = GColorOrange;
+	bottomColors[5] = GColorYellow;
+	bottomColors[6] = GColorSpringBud;
+	bottomColors[7] = GColorGreen;
+	bottomColors[8] = GColorDarkGreen;
+	bottomColors[9] = GColorJaegerGreen;
+	bottomColors[10] = GColorVividCerulean;
+	bottomColors[11] = GColorLiberty;
+	bottomColors[12] = GColorDukeBlue;
+	bottomColors[13] = GColorIndigo;
+	bottomColors[14] = GColorImperialPurple;
+	bottomColors[15] = GColorFashionMagenta;
+
+	middleColors[0] = GColorCadetBlue;
+	middleColors[1] = GColorWindsorTan;
+	middleColors[2] = GColorSunsetOrange;
+	middleColors[3] = GColorBabyBlueEyes;
+	middleColors[4] = GColorChromeYellow;
+	middleColors[5] = GColorIcterine;
+	middleColors[6] = GColorInchworm;
+	middleColors[7] = GColorSpringBud;
+	middleColors[8] = GColorKellyGreen;
+	middleColors[9] = GColorMediumAquamarine;
+	middleColors[10] = GColorCyan;
+	middleColors[11] = GColorBlueMoon;
+	middleColors[12] = GColorBlue;
+	middleColors[13] = GColorPurpureus;
+	middleColors[14] = GColorPurple;
+	middleColors[15] = GColorMagenta;
+
+	topColors[0] = GColorCeleste;
+	topColors[1] = GColorRajah;
+	topColors[2] = GColorMelon;
+	topColors[3] = GColorRichBrilliantLavender;
+	topColors[4] = GColorIcterine;
+	topColors[5] = GColorPastelYellow;
+	topColors[6] = GColorPastelYellow;
+	topColors[7] = GColorMintGreen;
+	topColors[8] = GColorMayGreen;
+	topColors[9] = GColorMintGreen;
+	topColors[10] = GColorCeleste;
+	topColors[11] = GColorVividCerulean;
+	topColors[12] = GColorBlueMoon;
+	topColors[13] = GColorLavenderIndigo;
+	topColors[14] = GColorBrilliantRose;
+	topColors[15] = GColorShockingPink;
+
+
+}
 
 static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed)
 {
@@ -77,6 +137,11 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 		{
 			tick_timer_service_subscribe(MINUTE_UNIT, handle_second_tick);
 		}
+	}
+	Tuple *fav_color_t = dict_find(iter, MESSAGE_KEY_FavColor);
+	if(fav_color_t)
+	{
+		settings.FavColor = fav_color_t->value->int32;
 	}
 	save_settings();
 }
@@ -175,7 +240,7 @@ static void battery_update_proc(Layer *layer, GContext *ctx)
 {
 
 	GRect bounds = layer_get_bounds(layer);
-#	if PBL_COLOR
+	#if PBL_COLOR
 		graphics_context_set_fill_color(ctx, GColorGreen);
 	#else
 		graphics_context_set_fill_color(ctx, GColorBlack);
@@ -229,9 +294,6 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	int lfLinePntOffSet = 3;
 	int rtLinePntOffSet = 20;
 	int lineVertOffSet = 3;
-	//Draw Inner and Outer Clock Borders
-	graphics_draw_rect(ctx, GRect(26, 23, 148, 148));
-	graphics_draw_rect(ctx, GRect(25, 22, 150, 150));
 	#elif PBL_DISPLAY_HEIGHT == 180 || PBL_DISPLAY_HEIGHT == 168
 	int yOffSet = 0;
 	int ySqs = 10;
@@ -248,16 +310,21 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	int lfLineX = 3;
 	int rtLineX = 8;
 	//Draw Clock Border
-	graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
+	//graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
 	#elif PBL_DISPLAY_HEIGHT == 168
 	int xOffSet = -8;
 	int xSqs = 10;
 	int lfLineX = 2;
 	int rtLineX = 7;
 	//Draw Clock Border
-	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
+	//graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
 	#endif
 
+	#if PBL_COLOR
+	graphics_context_set_stroke_color(ctx, GColorDarkGray);
+	#else
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	#endif
 	//Draw the background grid with top row first
 	for(int y = 0; y < ySqs; y++)
 	{
@@ -271,6 +338,7 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 			//Finally draw the grid square itself based on the previous positions and size
 			//The sqGridSize should be 1 minus the sqSize but thanks to rects not using a stroke width of 2 correctly,
 			//it has to be handled with a stroke width of 1 and thus has to be equal to sqSize
+			graphics_context_set_stroke_color(ctx, GColorDarkGray);
 			graphics_draw_rect(ctx, GRect(posx, posy, sqSize, sqSize));
 			//Next, check if the current square is inside or outside of the current clock face bounds
 			if((x < lfLineX || x > rtLineX) || (y < 1 || y > 6))
@@ -278,6 +346,7 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 				//If they aren't then iterate through and draw 8 lines with offsets from the left, right, and top of the current square
 				for(int lines = 0; lines < 8; lines++)
 				{
+					graphics_context_set_stroke_color(ctx, GColorLightGray);
 					GPoint p1 = GPoint(lfLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
 					GPoint p2 = GPoint(rtLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
 					graphics_draw_line(ctx, p1, p2);
@@ -285,13 +354,62 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 			}
 		}
 	}
+	#if PBL_DISPLAY_HEIGHT == 228
+	//Draw Inner and Outer Clock Borders
+	//outer
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(26, 23, 148, 148));
+	//inner
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(25, 22, 150, 150));
+	//outer
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(28, 25, 144, 144));
+	//inner
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(27, 24, 146, 146));
+	#elif PBL_DISPLAY_HEIGHT == 180
+	//Draw Clock Border
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(41, 16, 97, 97));
+	#elif PBL_DISPLAY_HEIGHT == 168
+
+	#if PBL_COLOR
+	//Draw Clock Border
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(24, 16, 97, 97));
+	#else
+	//Draw Clock Border
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
+	#endif
+	#endif
 }
 
 static void topbar_proc(Layer *layer, GContext *ctx)
 {
 	GRect bounds = layer_get_bounds(layer);
+	#if PBL_COLOR
+	//graphics_draw_bitmap_in_rect(ctx, s_topbargradient_bitmap, bounds);
+	GColor* pal = gbitmap_get_palette(s_topbargradient_bitmap);
+	//Bottom
+	pal[0] = bottomColors[settings.FavColor];
+	//Unused
+	pal[1] = GColorRed;
+	//Middle
+	pal[2] = middleColors[settings.FavColor];
+	//Top
+	pal[3] = topColors[settings.FavColor];
+	//gbitmap_set_palette(s_topbargradient_bitmap, pal, true);
+	graphics_draw_bitmap_in_rect(ctx, s_topbargradient_bitmap, bounds);
+	#else
 	graphics_context_set_fill_color(ctx, GColorWhite);
 	graphics_fill_rect(ctx, bounds, 0, GCornerNone);
+	#endif
 }
 
 static void clock_proc(Layer *layer, GContext *ctx)
@@ -322,20 +440,20 @@ static void main_window_load(Window *window) {
 	// Create battery meter Layer
 	s_battery_layer = layer_create(GRect(174, 4, 24, 14));
 	// Create the BitmapLayer to display the GBitmap
-	s_bt_icon_on_layer = bitmap_layer_create(GRect(146, 3, 22, 16));
-	s_bt_icon_off_layer = bitmap_layer_create(GRect(146, 3, 22, 16));
+	s_bt_icon_on_layer = bitmap_layer_create(GRect(147, 1, 20, 20));
+	s_bt_icon_off_layer = bitmap_layer_create(GRect(147, 1, 20, 20));
 	// Create the Bluetooth icon GBitmap
 	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BTPT2_ICON_OFF);
 	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BTPT2_ICON_ON);
 	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 200, 22));
+	s_topbargradient_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPBARPT2_ICON);
 	#elif PBL_DISPLAY_HEIGHT == 180 || PBL_DISPLAY_HEIGHT == 168
 	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_NINTENDO_DS_BIOS_15));
 	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEP_ICON);
 	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERY_ICON);
 	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUM_ICON);
-	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_OFF);
-	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_ON);
 	#endif
+
 
 	#if PBL_DISPLAY_HEIGHT == 180
 	int offset = 25;
@@ -346,10 +464,13 @@ static void main_window_load(Window *window) {
 	s_clock_layer = layer_create(GRect(40, 40, 99, 99));
 	// Create battery meter Layer
 	s_battery_layer = layer_create(GRect(130, 15, 12, 7));
+	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BTCOLOR_ICON_OFF);
+	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BTCOLOR_ICON_ON);
 	// Create the BitmapLayer to display the GBitmap
-	s_bt_icon_on_layer = bitmap_layer_create(GRect(114, 15, 11, 8));
-	s_bt_icon_off_layer = bitmap_layer_create(GRect(114, 15, 11, 8));
-	s_topsep_layer = bitmap_layer_create(GRect(0, 13, 144, 15));
+	s_bt_icon_on_layer = bitmap_layer_create(GRect(113, 10, 12, 13));
+	s_bt_icon_off_layer = bitmap_layer_create(GRect(113, 10, 12, 13));
+	s_topsep_layer = bitmap_layer_create(GRect(0, 11, 144, 15));
+	s_topbargradient_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPBARRND_ICON);
 	#elif PBL_DISPLAY_HEIGHT == 168
 	int offset = 15;
 	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
@@ -360,9 +481,20 @@ static void main_window_load(Window *window) {
 	// Create battery meter Layer
 	s_battery_layer = layer_create(GRect(130, 4, 12, 7));
 	// Create the BitmapLayer to display the GBitmap
+	#if PBL_COLOR
+	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BTCOLOR_ICON_OFF);
+	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BTCOLOR_ICON_ON);
+	s_bt_icon_on_layer = bitmap_layer_create(GRect(113, 1, 12, 13));
+	s_bt_icon_off_layer = bitmap_layer_create(GRect(113, 1, 12, 13));
+	#else
+	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_OFF);
+	s_bt_icon_bitmap_on = gbitmap_create_with_resource(RESOURCE_ID_BT_ICON_ON);
 	s_bt_icon_on_layer = bitmap_layer_create(GRect(114, 4, 11, 8));
 	s_bt_icon_off_layer = bitmap_layer_create(GRect(114, 4, 11, 8));
+	#endif
+
 	s_topsep_layer = bitmap_layer_create(GRect(0, 0, 144, 15));
+	s_topbargradient_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPBAR_ICON);
 	#endif
 	Layer *window_layer = window_get_root_layer(window);
 	GRect bounds = layer_get_bounds(window_layer);
@@ -390,25 +522,51 @@ static void main_window_load(Window *window) {
 	layer_set_update_proc(s_topbar_layer, topbar_proc);
 	layer_add_child(window_get_root_layer(window), s_topbar_layer);
 
+	//s_topbargradient_layer = bitmap_layer_create(layer_bounds);
+
+	//bitmap_layer_set_bitmap(s_topbargradient_layer, s_topbargradient_bitmap);
+	//layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_topbargradient_layer));
+
+	text_layer_set_background_color(s_time_label, GColorClear);
+	text_layer_set_background_color(s_date_label, GColorClear);
+	text_layer_set_background_color(s_name_label, GColorClear);
 	s_date_layer = layer_create(bounds);
+	#if PBL_COLOR
+	if(settings.FavColor == 5 || settings.FavColor == 6 || settings.FavColor == 7)
+	{
+		text_layer_set_text_color(s_time_label, GColorBlack);
+		text_layer_set_text_color(s_date_label, GColorBlack);
+		text_layer_set_text_color(s_name_label, GColorBlack);
+	}
+	else
+	{
+		text_layer_set_text_color(s_time_label, GColorWhite);
+		text_layer_set_text_color(s_date_label, GColorWhite);
+		text_layer_set_text_color(s_name_label, GColorWhite);
+	}
+	#else
+		text_layer_set_text_color(s_time_label, GColorBlack);
+		text_layer_set_text_color(s_date_label, GColorBlack);
+		text_layer_set_text_color(s_name_label, GColorBlack);
+	#endif
 	layer_set_update_proc(s_date_layer, date_update_proc);
 	layer_add_child(s_topbar_layer, s_date_layer);
 
 	text_layer_set_text(s_time_label, s_day_buffer);
-	text_layer_set_text_color(s_time_label, GColorBlack);
+
 	text_layer_set_font(s_time_label, s_time_font);
 
 	layer_add_child(s_date_layer, text_layer_get_layer(s_time_label));
 
 	text_layer_set_text(s_date_label, s_num_buffer);
-	text_layer_set_text_color(s_date_label, GColorBlack);
+
 	text_layer_set_font(s_date_label, s_time_font);
 
 	layer_add_child(s_date_layer, text_layer_get_layer(s_date_label));
 
 	strcpy(s_name_buffer, "Pebble");
 	text_layer_set_text(s_name_label, s_name_buffer);
-	text_layer_set_text_color(s_name_label, GColorBlack);
+
 	text_layer_set_font(s_name_label, s_time_font);
 	layer_add_child(s_date_layer, text_layer_get_layer(s_name_label));
 
@@ -474,9 +632,12 @@ static void main_window_unload(Window *window) {
 	gbitmap_destroy(s_topsep_bitmap);
 	bitmap_layer_destroy(s_numbersg_layer);
 	gbitmap_destroy(s_numbers_bitmap);
+	bitmap_layer_destroy(s_topbargradient_layer);
+	gbitmap_destroy(s_topbargradient_bitmap);
 }
 
 static void init() {
+	set_colors();
 	load_settings();
 	// Create main Window element and assign to pointer
 	s_main_window = window_create();

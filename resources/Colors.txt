@@ -1,0 +1,26 @@
+    Bottom                  Middle                  Top
+1-  GColorMidnightGreen     GColorCadetBlue         GColorCeleste
+2-  GColorBulgarianRose     GColorWindsorTan        GColorRajah
+3-  GColorRed               GColorSunsetOrange      GColorMelon
+4-  GColorShockingPink      GColorBabyBlueEyes      GColorRichBrilliantLavender
+5-  GColorOrange            GColorChromeYellow      GColorIcterine
+6-  GColorYellow            GColorIcterine          GColorPastelYellow
+7-  GColorSpringBud         GColorInchworm          GColorPastelYellow
+8-  GColorGreen             GColorSpringBud         GColorMintGreen
+9-  GColorDarkGreen         GColorKellyGreen        GColorMayGreen
+10- GColorJaegerGreen       GColorMediumAquamarine  GColorMintGreen
+11- GColorVividCerulean     GColorCyan              GColorCeleste
+12- GColorLiberty           GColorBlueMoon          GColorVividCerulean
+13- GColorDukeBlue          GColorBlue              GColorBlueMoon
+14- GColorIndigo            GColorPurpureus         GColorLavenderIndigo
+15- GColorImperialPurple    GColorPurple            GColorBrilliantRose
+16- GColorFashionMagenta    GColorMagenta           GColorShockingPink
+
+Lines- GColorLightGray
+Dots/Separators- GColorDarkGray
+
+Battery Inner Full- GColorMalachite
+Battery Outer Full- GColorIslamicGreen
+
+Battery Inner Low- GColorSunsetOrange
+Battery Outer Low- GColorRed
