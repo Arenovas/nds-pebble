@@ -705,7 +705,6 @@ static void main_window_unload(Window *window) {
 
 static void init() {
 	set_colors();
-	load_settings();
 	// Create main Window element and assign to pointer
 	s_main_window = window_create();
 
@@ -734,6 +733,7 @@ static void init() {
 	s_num_buffer[0] = '\0';
 
 	tick_timer_service_subscribe(SECOND_UNIT, handle_second_tick);
+
 	// Ensure battery level is displayed from the start
 	battery_callback(battery_state_service_peek());
 
@@ -745,7 +745,7 @@ static void init() {
 
 	// Show the correct state of the BT connection from the start
 	bluetooth_callback(connection_service_peek_pebble_app_connection());
-
+	load_settings();
 	app_message_register_inbox_received(inbox_received_handler);
 	app_message_open(128, 128);
 }
