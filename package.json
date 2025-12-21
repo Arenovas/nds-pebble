@@ -6,7 +6,7 @@
     "pebble-app"
   ],
   "dependencies": {
-    "pebble-clay": "^1.0.4"
+    "@rebble/clay": "^1.0.6"
   },
   "pebble": {
     "sdkVersion": "3",
@@ -15,7 +15,8 @@
       "basalt",
       "chalk",
       "diorite",
-      "emery"
+      "emery",
+      "flint"
     ],
     "enableMultiJS": true,
     "capabilities": [
