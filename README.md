@@ -1,6 +1,12 @@
 # nds-pebble
 
-![screenshot](dioriteflint.png)
+Aplite, Diorite, and Flint: ![screenshot](storeassets/screenshots/ApliteDioriteFlint.png)
+
+Basalt: ![screenshot](storeassets/screenshots/Basalt.png)
+
+Chalk: ![screenshot](storeassets/screenshots/Chalk.png)
+
+Emery: ![screenshot](storeassets/screenshots/Emery.png)
 
 A recreation of the NDS BIOS clock.
 
