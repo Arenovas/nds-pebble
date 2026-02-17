@@ -6,6 +6,7 @@ static Window *s_main_window;
 
 static Layer *s_bgsq_layer;
 static Layer *s_topbar_layer;
+static Layer *s_clockbg_layer;
 static Layer *s_clock_layer;
 static Layer *s_battery_layer;
 static Layer *s_date_layer, *s_hands_layer;
@@ -33,19 +34,15 @@ static GBitmap *s_topsep_bitmap;
 static GBitmap *s_numbers_bitmap;
 static GBitmap *s_topbargradient_bitmap;
 
-//static const GColor bottomColors[] = { GColorMidnightGreen, GColorBulgarianRose};
 
 // A struct for our specific settings (see main.h)
 ClaySettings settings;
 
 // Initialize the default settings
 static void default_settings() {
-	//settings.BackgroundColor = GColorBlack;
-	//settings.ForegroundColor = GColorWhite;
 	settings.SecondTick = true;
 	settings.FavColor = 0;
 	settings.DateFormat = 0;
-	//settings.Animations = false;
 }
 
 // Read settings from persistent storage
@@ -59,8 +56,6 @@ static void load_settings() {
 // Save the settings to persistent storage
 static void save_settings() {
 	persist_write_data(SETTINGS_KEY, &settings, sizeof(settings));
-	// Update the display based on new settings
-	//update_display();
 }
 
 static void set_colors()
@@ -115,8 +110,6 @@ static void set_colors()
 	topColors[13] = GColorLavenderIndigo;
 	topColors[14] = GColorBrilliantRose;
 	topColors[15] = GColorShockingPink;
-
-
 }
 
 static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed)
@@ -354,8 +347,6 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	int xSqs = 10;
 	int sqSize = 24;
 	int sqGridSize = 24;
-	int lfLineX = 2;
-	int rtLineX = 7;
 	int lfLinePntOffSet = 3;
 	int rtLinePntOffSet = 20;
 	int lineVertOffSet = 3;
@@ -372,24 +363,12 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 	#if PBL_DISPLAY_HEIGHT == 180
 	int xOffSet = -7;
 	int xSqs = 12;
-	int lfLineX = 3;
-	int rtLineX = 8;
-	//Draw Clock Border
-	//graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
 	#elif PBL_DISPLAY_HEIGHT == 168
 	int xOffSet = -8;
 	int xSqs = 10;
-	int lfLineX = 2;
-	int rtLineX = 7;
-	//Draw Clock Border
-	//graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
 	#endif
 
-	#if PBL_COLOR
 	graphics_context_set_stroke_color(ctx, GColorDarkGray);
-	#else
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	#endif
 	//Draw the background grid with top row first
 	for(int y = 0; y < ySqs; y++)
 	{
@@ -406,62 +385,24 @@ static void bgsq_proc(Layer *layer, GContext *ctx){
 			graphics_context_set_stroke_color(ctx, GColorDarkGray);
 			graphics_draw_rect(ctx, GRect(posx, posy, sqSize, sqSize));
 			//Next, check if the current square is inside or outside of the current clock face bounds
-			if((x < lfLineX || x > rtLineX) || (y < 1 || y > 6))
+			//If they aren't then iterate through and draw 8 lines with offsets from the left, right, and top of the current square
+			for(int lines = 0; lines < 8; lines++)
 			{
-				//If they aren't then iterate through and draw 8 lines with offsets from the left, right, and top of the current square
-				for(int lines = 0; lines < 8; lines++)
-				{
-					#if PBL_COLOR
-					graphics_context_set_stroke_color(ctx, GColorLightGray);
-					#endif
-					GPoint p1 = GPoint(lfLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
-					GPoint p2 = GPoint(rtLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
-					graphics_draw_line(ctx, p1, p2);
-				}
+				#if PBL_COLOR
+				graphics_context_set_stroke_color(ctx, GColorLightGray);
+				#endif
+				GPoint p1 = GPoint(lfLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
+				GPoint p2 = GPoint(rtLinePntOffSet + posx, lineVertOffSet + (lines * lineVertOffSet) + posy);
+				graphics_draw_line(ctx, p1, p2);
 			}
 		}
 	}
-	#if PBL_DISPLAY_HEIGHT == 228
-	//Draw Inner and Outer Clock Borders
-	//outer
-	graphics_context_set_stroke_color(ctx, GColorLightGray);
-	graphics_draw_rect(ctx, GRect(26, 23, 148, 148));
-	//inner
-	graphics_context_set_stroke_color(ctx, GColorLightGray);
-	graphics_draw_rect(ctx, GRect(25, 22, 150, 150));
-	//outer
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_draw_rect(ctx, GRect(28, 25, 144, 144));
-	//inner
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_draw_rect(ctx, GRect(27, 24, 146, 146));
-	#elif PBL_DISPLAY_HEIGHT == 180
-	//Draw Clock Border
-	graphics_context_set_stroke_color(ctx, GColorLightGray);
-	graphics_draw_rect(ctx, GRect(40, 15, 99, 99));
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_draw_rect(ctx, GRect(41, 16, 97, 97));
-	#elif PBL_DISPLAY_HEIGHT == 168
-
-	#if PBL_COLOR
-	//Draw Clock Border
-	graphics_context_set_stroke_color(ctx, GColorLightGray);
-	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_draw_rect(ctx, GRect(24, 16, 97, 97));
-	#else
-	//Draw Clock Border
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_draw_rect(ctx, GRect(23, 15, 99, 99));
-	#endif
-	#endif
 }
 
 static void topbar_proc(Layer *layer, GContext *ctx)
 {
 	GRect bounds = layer_get_bounds(layer);
 	#if PBL_COLOR
-	//graphics_draw_bitmap_in_rect(ctx, s_topbargradient_bitmap, bounds);
 	GColor* pal = gbitmap_get_palette(s_topbargradient_bitmap);
 	//Bottom
 	pal[0] = bottomColors[settings.FavColor];
@@ -471,7 +412,6 @@ static void topbar_proc(Layer *layer, GContext *ctx)
 	pal[2] = middleColors[settings.FavColor];
 	//Top
 	pal[3] = topColors[settings.FavColor];
-	//gbitmap_set_palette(s_topbargradient_bitmap, pal, true);
 	graphics_draw_bitmap_in_rect(ctx, s_topbargradient_bitmap, bounds);
 	#else
 	graphics_context_set_fill_color(ctx, GColorWhite);
@@ -491,6 +431,70 @@ static void clock_proc(Layer *layer, GContext *ctx)
 	}
 }
 
+static void clockbg_proc(Layer *layer, GContext *ctx){
+	GRect bounds = layer_get_bounds(layer);
+	graphics_context_set_fill_color(ctx, GColorWhite);
+	graphics_fill_rect(ctx, bounds, 0, GCornerNone);
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	#if PBL_DISPLAY_HEIGHT == 228
+	int yOffSet = 3;
+	int xOffSet = 3;
+	int sqSize = 24;
+	int sqGridSize = 24;
+	#elif PBL_DISPLAY_HEIGHT == 180 || PBL_DISPLAY_HEIGHT == 168
+	int yOffSet = 1;
+	int xOffSet = 1;
+	int sqSize = 17;
+	int sqGridSize = 16;
+	#endif
+
+	graphics_context_set_stroke_color(ctx, GColorDarkGray);
+	//Draw the background grid with top row first
+	for(int y = 0; y < 6; y++)
+	{
+		//Get the Y position based on the offset from the top of the layer, grid size, and the Y level
+		int posy = yOffSet + (sqGridSize * y);
+		//Then calculate the X position of the grid square in the Y row
+		for(int x = 0; x < 6; x++)
+		{
+			//Get the X position based on the offset from the left side of the layer, grid size, and the X level
+			int posx = xOffSet + (sqGridSize * x);
+			//Finally draw the grid square itself based on the previous positions and size
+			//The sqGridSize should be 1 minus the sqSize but thanks to rects not using a stroke width of 2 correctly,
+			//it has to be handled with a stroke width of 1 and thus has to be equal to sqSize
+			graphics_context_set_stroke_color(ctx, GColorDarkGray);
+			graphics_draw_rect(ctx, GRect(posx, posy, sqSize, sqSize));
+		}
+	}
+	#if PBL_DISPLAY_HEIGHT == 228
+	//Draw Inner and Outer Clock Borders
+	//outer
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(1, 1, 148, 148));
+	//inner
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(0, 0, 150, 150));
+	//outer
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(3, 3, 144, 144));
+	//inner
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(2, 2, 146, 146));
+	#else
+	#if PBL_COLOR 
+	//Draw Clock Border
+	graphics_context_set_stroke_color(ctx, GColorLightGray);
+	graphics_draw_rect(ctx, GRect(0, 0, 99, 99));
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(1, 1, 97, 97));
+	#else
+	//Draw Clock Border
+	graphics_context_set_stroke_color(ctx, GColorBlack);
+	graphics_draw_rect(ctx, GRect(0, 0, 99, 99));
+	#endif
+	#endif
+}
+
 static void main_window_load(Window *window) {
 	#if PBL_DISPLAY_HEIGHT == 228
 	int offset = 22;
@@ -502,8 +506,9 @@ static void main_window_load(Window *window) {
 	s_topsep_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TOPSEPPT2_ICON);
 	s_batt_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BATTERYPT2_ICON);
 	s_numbers_bitmap = gbitmap_create_with_resource(RESOURCE_ID_CLOCKNUMPT2_ICON);
-	s_numbersg_layer = bitmap_layer_create(GRect(25, 44, 150, 150));
-	s_clock_layer = layer_create(GRect(25, 44, 150, 150));
+	s_numbersg_layer = bitmap_layer_create(GRect(0, 0, 150, 150));
+	s_clock_layer = layer_create(GRect(0, 0, 150, 150));
+	s_clockbg_layer = layer_create(GRect(25, 44, 150, 150));
 	// Create battery meter Layer
 	s_battery_layer = layer_create(GRect(174, 4, 24, 14));
 	// Create the BitmapLayer to display the GBitmap
@@ -527,8 +532,9 @@ static void main_window_load(Window *window) {
 	s_time_label = text_layer_create(GRect(50, 8, 29, 15));
 	s_date_label = text_layer_create(GRect(83, 8, 27, 15));
 	s_name_label = text_layer_create(GRect(76, -4, 47, 15));
-	s_numbersg_layer = bitmap_layer_create(GRect(40, 40, 99, 99));
-	s_clock_layer = layer_create(GRect(40, 40, 99, 99));
+	s_numbersg_layer = bitmap_layer_create(GRect(0, 0, 99, 99));
+	s_clock_layer = layer_create(GRect(0, 0, 99, 99));
+	s_clockbg_layer = layer_create(GRect(40, 40, 99, 99));
 	// Create battery meter Layer
 	s_battery_layer = layer_create(GRect(130, 15, 12, 7));
 	s_bt_icon_bitmap_off = gbitmap_create_with_resource(RESOURCE_ID_BTCOLOR_ICON_OFF);
@@ -543,8 +549,9 @@ static void main_window_load(Window *window) {
 	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
 	s_date_label = text_layer_create(GRect(83, -3, 27, 15));
 	s_name_label = text_layer_create(GRect(3, -3, 47, 15));
-	s_numbersg_layer = bitmap_layer_create(GRect(23, 30, 99, 99));
-	s_clock_layer = layer_create(GRect(23, 30, 99, 99));
+	s_numbersg_layer = bitmap_layer_create(GRect(0, 0, 99, 99));
+	s_clock_layer = layer_create(GRect(0, 0, 99, 99));
+	s_clockbg_layer = layer_create(GRect(23, 30, 99, 99));
 	// Create battery meter Layer
 	s_battery_layer = layer_create(GRect(130, 4, 12, 7));
 	// Create the BitmapLayer to display the GBitmap
@@ -574,13 +581,16 @@ static void main_window_load(Window *window) {
 
 	layer_set_update_proc(s_bgsq_layer, bgsq_proc);
 	layer_add_child(window_get_root_layer(window), s_bgsq_layer);
+	
+	layer_set_update_proc(s_clockbg_layer, clockbg_proc);
+	layer_add_child(window_get_root_layer(window), s_clockbg_layer);
 
 	bitmap_layer_set_compositing_mode(s_numbersg_layer, GCompOpSet);
 	bitmap_layer_set_bitmap(s_numbersg_layer, s_numbers_bitmap);
-	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_numbersg_layer));
+	layer_add_child(s_clock_layer, bitmap_layer_get_layer(s_numbersg_layer));
 
 	layer_set_update_proc(s_clock_layer, clock_proc);
-	layer_add_child(window_get_root_layer(window), s_clock_layer);
+	layer_add_child(s_clockbg_layer, s_clock_layer);
 
 	layer_bounds.size.h = offset;
 	layer_bounds.origin.y -= offset;
@@ -588,11 +598,6 @@ static void main_window_load(Window *window) {
 
 	layer_set_update_proc(s_topbar_layer, topbar_proc);
 	layer_add_child(window_get_root_layer(window), s_topbar_layer);
-
-	//s_topbargradient_layer = bitmap_layer_create(layer_bounds);
-
-	//bitmap_layer_set_bitmap(s_topbargradient_layer, s_topbargradient_bitmap);
-	//layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_topbargradient_layer));
 
 	text_layer_set_background_color(s_time_label, GColorClear);
 	text_layer_set_background_color(s_date_label, GColorClear);
@@ -668,6 +673,7 @@ static void main_window_unload(Window *window) {
 	layer_destroy(s_bgsq_layer);
 	layer_destroy(s_topbar_layer);
 	layer_destroy(s_clock_layer);
+	layer_destroy(s_clockbg_layer);
 
 	layer_destroy(s_date_layer);
 	layer_destroy(s_numbers_layer);

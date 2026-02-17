@@ -10,10 +10,7 @@ static GColor topColors[16];
 
 // A structure containing our settings
 typedef struct ClaySettings {
-  //GColor BackgroundColor;
-  //GColor ForegroundColor;
   bool SecondTick;
-  //bool Animations;
   int FavColor;
   int DateFormat;
 } ClaySettings;
