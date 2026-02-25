@@ -6,7 +6,7 @@
     "pebble-app"
   ],
   "dependencies": {
-    "@rebble/clay": "^1.0.6"
+    "@rebble/clay": "^1.0.8"
   },
   "pebble": {
     "sdkVersion": "3",
