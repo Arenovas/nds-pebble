@@ -530,7 +530,7 @@ static void main_window_load(Window *window) {
 	#if PBL_DISPLAY_HEIGHT == 180
 	int offset = 25;
 	s_time_label = text_layer_create(GRect(50, 8, 29, 15));
-	s_date_label = text_layer_create(GRect(83, 8, 27, 15));
+	s_date_label = text_layer_create(GRect(82, 8, 29, 15));
 	s_name_label = text_layer_create(GRect(76, -4, 47, 15));
 	s_numbersg_layer = bitmap_layer_create(GRect(0, 0, 99, 99));
 	s_clock_layer = layer_create(GRect(0, 0, 99, 99));
@@ -547,7 +547,7 @@ static void main_window_load(Window *window) {
 	#elif PBL_DISPLAY_HEIGHT == 168
 	int offset = 15;
 	s_time_label = text_layer_create(GRect(50, -3, 29, 15));
-	s_date_label = text_layer_create(GRect(83, -3, 27, 15));
+	s_date_label = text_layer_create(GRect(82, -3, 29, 15));
 	s_name_label = text_layer_create(GRect(3, -3, 47, 15));
 	s_numbersg_layer = bitmap_layer_create(GRect(0, 0, 99, 99));
 	s_clock_layer = layer_create(GRect(0, 0, 99, 99));
